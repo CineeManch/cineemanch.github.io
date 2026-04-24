@@ -1,64 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineemanch | Lights, Camera, Cinema!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-deep: #0a0b0c;
-            --sidebar-bg: #121416;
-            --accent-red: #e50914;
-            --text-dim: #9ca3af;
-        }
+<style>
+    /* Adding a geometric font to match your banner's "Cineemanch" logo */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Inter:wght@400;600;800&display=swap');
 
-        body {
-            background-color: var(--bg-deep);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
+    :root {
+        --bg-deep: #0a0a0b;
+        --sidebar-bg: #121214;
+        --accent-red: #e50914;
+        --text-dim: #b3b3b3;
+    }
 
-        /* 1. Header & Banner */
-        .banner-wrapper {
-            width: 100%;
-            background-color: var(--bg-deep);
-            border-bottom: 2px solid var(--accent-red);
-            overflow: hidden;
-        }
+    body {
+        background-color: var(--bg-deep);
+        color: white;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+    }
 
-        .hero-banner {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            display: block;
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        }
+    /* 1. Header & Banner - Optimized for your Theater Image */
+    .banner-wrapper {
+        width: 100%;
+        background-color: var(--bg-deep);
+        border-bottom: 3px solid var(--accent-red);
+        overflow: hidden;
+        position: relative;
+    }
 
-        /* 2. Column Layout */
-        .side-nav {
-            background-color: var(--sidebar-bg);
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            border-right: 1px solid #2d2d2d;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
+    .hero-banner {
+        width: 100%;
+        max-height: 450px; /* Increased to show more of that beautiful theater ceiling */
+        object-fit: cover;
+        display: block;
+        /* Sharper cinematic fade for a professional look */
+        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
 
-        .nav-link {
-            color: var(--text-dim);
-            font-weight: 600;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            transition: 0.3s;
-            margin-bottom: 0.5rem;
-            display: block;
-            text-decoration: none;
+    /* 2. Brand Identity - Matches the font style in your banner */
+    .brand-title {
+        font-family: 'Orbitron', sans-serif; /* Geometric/Tech font like your logo */
+        font-weight: 800;
+        color: var(--accent-red);
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+        display: block;
+        text-decoration: none;
+    }
+
+    /* 3. Column Layout */
+    .app-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .side-nav {
+        flex: 0 0 260px;
+        background-color: var(--sidebar-bg);
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        border-right: 1px solid #2d2d2d;
+        padding: 2rem;
+    }
+
+    .nav-link {
+        color: var(--text-dim);
+        font-weight: 600;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background: rgba(229, 9, 20, 0.15);
+        color: white;
+        border-left: 3px solid var(--accent-red);
+    }
+
+    .main-content { 
+        flex: 1;
+        min-width: 0;
+        padding: 2.5rem; 
+    }
+
+    .video-spotlight {
+        background: #16181b;
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid #2d2d2d;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .right-feed {
+        flex: 0 0 320px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        padding: 2rem;
+        border-left: 1px solid #2d2d2d;
+        overflow-y: auto;
+        background: rgba(10, 10, 11, 0.5);
+    }
+
+    .feed-item {
+        background: #1a1d20;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--accent-red);
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: 10px;
+    }
+
+    .feed-item:hover { 
+        transform: scale(1.03); 
+        background: #25282c;
+    }
+
+    /* 4. Responsive Design */
+    @media (max-width: 992px) {
+        .app-container { flex-direction: column; }
+        .side-nav, .right-feed { 
+            flex: 1 1 auto; 
+            height: auto; 
+            position: relative; 
+            border: none; 
+            padding: 1.5rem; 
         }
+        .hero-banner { max-height: 250px; }
+    }
+</style>        }
 
         .nav-link:hover, .nav-link.active {
             background: rgba(229, 9, 20, 0.1);
