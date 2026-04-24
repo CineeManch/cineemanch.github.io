@@ -3,60 +3,179 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>CineeManch</title>
+
 <style>
 body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family: Arial;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
 }
 
-/* HERO SECTION */
+/* ================= NAVBAR ================= */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: red;
+}
+
+.logo small {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* NAV LINKS */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: red;
+}
+
+/* ICONS */
+.icons span {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
 .hero {
-  height: 100vh;
-  background: url("Banner.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
+    position: relative;
+    height: 100vh;
+    background: url("Banner.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
 }
 
 /* DARK OVERLAY */
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, black, transparent);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
 }
 
 /* TEXT */
 .hero-content {
-  position: relative;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
 }
 
 .hero-content h1 {
-  font-size: 40px;
+    font-size: 60px;
+    margin: 0;
 }
 
 .hero-content span {
-  color: red;
+    color: red;
 }
 
 .hero-content p {
-  color: #ccc;
+    margin: 10px 0 20px;
+    color: #ccc;
+}
+
+/* BUTTONS */
+.buttons a {
+    padding: 12px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: red;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero {
+        padding-left: 20px;
+    }
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="hero">
-  <div class="overlay"></div>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">
+        Cinee<span>Manch</span>
+        <small>सिनेमंच</small>
+    </div>
 
-  <div class="hero-content">
-    <h1>Cinee<span>Manch</span></h1>
-    <p>सिनेमा की हर बात, हमारे साथ</p>
-  </div>
+    <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Reviews</a>
+        <a href="#">Trailer Breakdown</a>
+        <a href="#">Box Office</a>
+        <a href="#">News</a>
+        <a href="#">About</a>
+    </div>
+
+    <div class="icons">
+        <span>▶</span>
+        <span>◎</span>
+        <span>🔍</span>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Cinee<span>Manch</span></h1>
+        <p>सिनेमा की हर बात, हमारे साथ</p>
+
+        <div class="buttons">
+            <a href="https://youtube.com/@cineemanch" class="btn-red">▶ Watch Latest</a>
+            <a href="#" class="btn-outline">Subscribe</a>
+        </div>
+    </div>
 </div>
 
 </body>
