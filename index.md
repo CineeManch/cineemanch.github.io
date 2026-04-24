@@ -1,79 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cineemanch | Movie Reviews & Analysis</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0f1113;
-            --card-dark: #1a1d20;
-            --accent-red: #e50914;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-        }
+<section class="blog-section">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h2 class="fw-bold text-white">Video Reviews</h2>
+                <p class="text-secondary mb-0">Latest uploads from Cineemanch</p>
+            </div>
+        </div>
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-        }
+        <div class="row g-4" id="youtube-feed">
+            <div class="col-12 text-center text-secondary">
+                <p>Loading your latest reviews...</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        .navbar {
-            background-color: rgba(15, 17, 19, 0.95);
-            border-bottom: 1px solid #333;
-        }
+<script>
+    const API_KEY = 'YOUR_API_KEY_HERE'; 
+    const CHANNEL_ID = 'UC_p470C_vL8_hK_kR0V-WWA'; // Cineemanch ID
 
-        .brand-name {
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--accent-red) !important;
-            font-size: 1.5rem;
-        }
+    async function buildVideoFeed() {
+        try {
+            // 1. Get the 'Uploads' playlist ID
+            const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`;
+            const channelRes = await fetch(channelUrl);
+            const channelData = await channelRes.json();
+            const uploadsId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
 
-        /* Video Spotlight Section */
-        .spotlight-section {
-            padding: 60px 0;
-            background: linear-gradient(180deg, #16191c 0%, #0f1113 100%);
-        }
+            // 2. Get the latest 10 videos from that playlist
+            const playlistUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsId}&maxResults=10&key=${API_KEY}`;
+            const playlistRes = await fetch(playlistUrl);
+            const playlistData = await playlistRes.json();
+            
+            const feedContainer = document.getElementById('youtube-feed');
+            feedContainer.innerHTML = ''; // Clear the loading text
 
-        .video-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
+            // 3. Loop through videos and create HTML cards
+            playlistData.items.forEach(item => {
+                const video = item.snippet;
+                const videoId = video.resourceId.videoId;
+                
+                const cardHtml = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card review-card h-100" style="background: #1a1d20; border: 1px solid #333; border-radius: 12px; overflow: hidden;">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-white">${video.title}</h5>
+                                <p class="card-text text-secondary small">${video.description.substring(0, 100)}...</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                feedContainer.innerHTML += cardHtml;
+            });
 
-        .spotlight-title {
-            font-weight: 800;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        } catch (error) {
+            console.error("Feed Error:", error);
+            document.getElementById('youtube-feed').innerHTML = "<p class='text-danger'>Failed to load feed. Check API Key.</p>";
         }
+    }
 
-        /* Blog Grid Section */
-        .blog-section {
-            padding: 80px 0;
-        }
-
-        .review-card {
-            background-color: var(--card-dark);
-            border: 1px solid #2a2e32;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-red);
-        }
-
-        .card-img-top {
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            height: 200px;
+    buildVideoFeed();
+</script>            height: 200px;
             object-fit: cover;
         }
 
