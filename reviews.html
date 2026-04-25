@@ -1,6 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews - CineeManch</title>
+
 <style>
 
-/* NAVBAR */
+/* ================= BODY ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
     position: sticky;
     top: 0;
@@ -24,20 +38,13 @@
     margin: 0 12px;
     font-size: 14px;
 }
+
 .nav-links a:hover,
 .nav-links .active {
     color: red;
 }
 
-/* BODY */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: white;
-}
-
-/* BANNER */
+/* ================= BANNER ================= */
 .banner {
     height: 50vh;
     background: url("Banner 2.png") center/cover no-repeat;
@@ -52,7 +59,7 @@ body {
     padding: 10px 20px;
 }
 
-/* REVIEW SECTION */
+/* ================= REVIEWS ================= */
 .reviews {
     padding: 40px;
 }
@@ -60,11 +67,11 @@ body {
 .review-item {
     display: flex;
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     align-items: center;
 }
 
-/* 🔥 VIDEO FIX (IMPORTANT) */
+/* VIDEO */
 .video-wrapper {
     width: 50%;
     aspect-ratio: 16 / 9;
@@ -89,9 +96,10 @@ body {
 
 .review-text p {
     color: #ccc;
+    line-height: 1.5;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
     .review-item {
         flex-direction: column;
@@ -101,6 +109,89 @@ body {
     .review-text {
         width: 100%;
     }
+
+    .banner h1 {
+        font-size: 32px;
+    }
 }
 
 </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <div class="logo">
+        Cinee<span>Manch</span>
+        <small>सिनेमंच</small>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="#">Recommended</a>
+        <a href="#">Box Office</a>
+        <a href="#">About</a>
+    </div>
+</div>
+
+<!-- ================= BANNER ================= -->
+<div class="banner">
+    <h1>Reviews</h1>
+</div>
+
+<!-- ================= REVIEWS ================= -->
+<div class="reviews">
+
+    <!-- REVIEW 1 -->
+    <div class="review-item">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/GB8ICqVQQMw" allowfullscreen></iframe>
+        </div>
+
+        <div class="review-text">
+            <h2>Daadi Ki Shaadi Trailer Review</h2>
+            <p>
+                In this review, we break down the trailer, highlight key moments,
+                and give an honest opinion on whether this film looks promising
+                or just another overhyped project.
+            </p>
+        </div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="review-item">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/FrqmF_AEU5s" allowfullscreen></iframe>
+        </div>
+
+        <div class="review-text">
+            <h2>Raja Shivaji Review</h2>
+            <p>
+                A detailed analysis of the trailer, performances, and cinematic
+                scale. We explore whether the storytelling matches the grand
+                visuals or falls short.
+            </p>
+        </div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="review-item">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/AGQSZcQypdI" allowfullscreen></iframe>
+        </div>
+
+        <div class="review-text">
+            <h2>Kattalan Trailer Review</h2>
+            <p>
+                Breaking down the action, background score, and overall vibe of
+                the trailer. Is it worth the hype? Watch our honest reaction.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
