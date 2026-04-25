@@ -6,12 +6,12 @@ layout: null
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CineeManch - Home</title>
+<title>Reviews - CineeManch</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* ================= RESET ================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -19,205 +19,221 @@ layout: null
 }
 
 html, body {
-    height: 100%;
     width: 100%;
     font-family: 'Inter', sans-serif;
     background: #000;
-    color: white;
-    overflow: hidden; /* 🔥 NO SCROLL ON DESKTOP */
+    color: #fff;
 }
 
-/* ================= NAVBAR ================= */
+/* NAV */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
-    height: 60px;
-    padding: 0 4%;
+    padding: 15px 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-}
+.logo { font-size: 24px; font-weight: 700; }
 .logo span { color: #ff2d2d; }
-.logo small {
-    font-size: 10px;
-    color: #aaa;
-    display: block;
-}
+.logo small { font-size: 11px; color: #aaa; display: block; }
 
 .nav-links {
     display: flex;
-    gap: 18px;
+    gap: 25px;
 }
 
 .nav-links a {
     color: #ccc;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
 }
 
-/* ================= MAIN WRAPPER ================= */
-.wrapper {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px; /* navbar space */
-}
-
-/* ================= TOP HERO ================= */
-.hero {
-    flex: 1;
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+                url("Banner 2.png") center/cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 0 5%;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-                url("Banner 1.png") center/cover no-repeat;
+    justify-content: center;
 }
 
-.hero-content h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
+.banner h1 {
+    font-size: clamp(36px, 8vw, 80px);
 }
 
-.hero-content span {
-    color: #ff2d2d;
+/* CONTAINER */
+.content-width {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-.hero-content p {
-    color: #bbb;
-    font-size: 16px;
-}
-
-/* ================= LATEST SECTION ================= */
-.latest {
-    flex: 1;
-    padding: 12px 5%;
+/* ================= FEATURED (LATEST POST) ================= */
+.featured {
     display: flex;
-    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+    background: #0a0a0a;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.latest h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-left: 3px solid #ff2d2d;
-    padding-left: 8px;
-}
-
-/* ================= VIDEO GRID ================= */
-.video-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns desktop */
-    gap: 12px;
+/* video */
+.featured-video {
+    flex: 2;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
     overflow: hidden;
 }
 
-/* VIDEO CARD */
-.video-card {
-    background: #0f0f0f;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-/* compact video */
-.video-card iframe {
+.featured-video iframe {
     width: 100%;
-    height: 90px; /* compact height */
+    height: 100%;
     border: none;
 }
 
-/* title */
-.video-card h3 {
-    font-size: 12px;
-    padding: 6px 8px;
-    color: #ddd;
+/* text */
+.featured-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
+.featured-text h2 {
+    color: #ff2d2d;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
 
-    html, body {
-        overflow-y: auto; /* allow scroll on mobile */
+.featured-text p {
+    color: #bbb;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* ================= NORMAL CARDS ================= */
+.review-item {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px;
+    background: #0a0a0a;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.review-text h3 {
+    color: #ff2d2d;
+    margin-bottom: 8px;
+}
+
+.review-text p {
+    color: #bbb;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .featured {
+        flex-direction: column;
     }
 
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-        font-size: 34px;
-    }
-
-    .hero-content p {
-        font-size: 14px;
+    .featured-text h2 {
+        font-size: 24px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="navbar">
-    <div class="logo">
-        Cinee<span>Manch</span>
-        <small>सिनेमंच</small>
-    </div>
-
+    <div class="logo">Cinee<span>Manch</span><small>सिनेमंच</small></div>
     <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="reviews.html">Reviews</a>
+        <a href="index.html">Home</a>
+        <a href="reviews.html" class="active">Reviews</a>
         <a href="#">About</a>
     </div>
 </nav>
 
-<!-- MAIN -->
-<div class="wrapper">
+<!-- BANNER -->
+<header class="banner">
+    <h1>Movie Reviews</h1>
+</header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Cinee<span>Manch</span></h1>
-            <p>सिनेमा की हर बात, हमारे साथ</p>
+<!-- CONTENT -->
+<main>
+<div class="content-width">
+
+    {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+
+    <!-- 🔥 FEATURED LATEST POST -->
+    {% assign latest = sorted_posts.first %}
+
+    {% if latest %}
+    <section class="featured">
+
+        <div class="featured-video">
+            {% if latest.video %}
+            <iframe src="{{ latest.video }}" allowfullscreen></iframe>
+            {% endif %}
         </div>
-    </section>
 
-    <!-- LATEST -->
-    <section class="latest">
-        <h2>Latest Reviews</h2>
-
-        <div class="video-grid">
-            {% for post in site.posts limit:4 %}
-            <div class="video-card">
-
-                {% if post.video %}
-                <iframe src="{{ post.video }}" allowfullscreen></iframe>
-                {% else %}
-                <div style="height:90px; display:flex;align-items:center;justify-content:center;color:#666;">
-                    No Video
-                </div>
-                {% endif %}
-
-                <h3>{{ post.title }}</h3>
-            </div>
-            {% endfor %}
-
+        <div class="featured-text">
+            <h2>{{ latest.title }}</h2>
+            <p>{{ latest.description | default: latest.excerpt | strip_html }}</p>
         </div>
+
     </section>
+    {% endif %}
+
+    <!-- NORMAL POSTS -->
+    {% for post in sorted_posts offset:1 %}
+    <article class="review-item">
+
+        <div class="video-wrapper">
+            {% if post.video %}
+            <iframe src="{{ post.video }}" allowfullscreen></iframe>
+            {% endif %}
+        </div>
+
+        <div class="review-text">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.description | default: post.excerpt | strip_html }}</p>
+        </div>
+
+    </article>
+    {% endfor %}
 
 </div>
+</main>
 
 </body>
 </html>
