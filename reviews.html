@@ -24,7 +24,7 @@ html, body {
     padding: 0 20px;
 }
 
-/* ================= NAVBAR (CENTERED FIXED) ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     position: sticky;
     top: 0;
@@ -39,11 +39,9 @@ html, body {
     z-index: 1000;
 }
 
-/* LOGO */
 .logo {
     font-size: 22px;
     font-weight: 700;
-    justify-self: start;
 }
 
 .logo span { color: #ff2d2d; }
@@ -54,7 +52,6 @@ html, body {
     color: #aaa;
 }
 
-/* NAV LINKS CENTER */
 .nav-links {
     display: flex;
     gap: 22px;
@@ -65,9 +62,8 @@ html, body {
     color: #ddd;
     text-decoration: none;
     font-size: 14px;
-    position: relative;
     white-space: nowrap;
-    transition: 0.3s;
+    position: relative;
 }
 
 .nav-links a::after {
@@ -89,11 +85,6 @@ html, body {
 .nav-links a:hover::after,
 .nav-links .active::after {
     width: 100%;
-}
-
-/* RIGHT BALANCE */
-.nav-right {
-    justify-self: end;
 }
 
 /* ================= BANNER ================= */
@@ -126,7 +117,7 @@ html, body {
     padding: 50px 0;
 }
 
-/* REVIEW CARD (CLEAN CINEMATIC STYLE) */
+/* REVIEW CARD */
 .review-item {
     display: flex;
     gap: 25px;
@@ -145,7 +136,7 @@ html, body {
     border-color: rgba(255,45,45,0.3);
 }
 
-/* VIDEO (SMALLER + CONTROLLED) */
+/* VIDEO */
 .video-wrapper {
     width: 40%;
     max-width: 420px;
@@ -222,7 +213,6 @@ html, body {
         <a href="#">About</a>
     </div>
 
-    <div class="nav-right"></div>
 </div>
 
 <!-- BANNER -->
@@ -230,47 +220,25 @@ html, body {
     <h1>Reviews</h1>
 </div>
 
-<!-- REVIEWS -->
+<!-- REVIEWS (DYNAMIC STEP 5) -->
 <div class="container reviews">
 
-    <div class="review-item">
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/GB8ICqVQQMw" allowfullscreen></iframe>
-        </div>
-        <div class="review-text">
-            <h2>Daadi Ki Shaadi Trailer Review</h2>
-            <p>
-                A breakdown of the trailer, key moments, and overall impression
-                of whether the film is worth the hype or not.
-            </p>
-        </div>
-    </div>
+    {% for post in site.posts %}
 
     <div class="review-item">
+
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/FrqmF_AEU5s" allowfullscreen></iframe>
+            <iframe src="{{ post.video }}" allowfullscreen></iframe>
         </div>
+
         <div class="review-text">
-            <h2>Raja Shivaji Review</h2>
-            <p>
-                Analysis of visuals, storytelling scale, and performances in this
-                cinematic historical experience.
-            </p>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.description }}</p>
         </div>
+
     </div>
 
-    <div class="review-item">
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/AGQSZcQypdI" allowfullscreen></iframe>
-        </div>
-        <div class="review-text">
-            <h2>Kattalan Trailer Review</h2>
-            <p>
-                A detailed breakdown of action, sound design, and overall trailer
-                impact with honest feedback.
-            </p>
-        </div>
-    </div>
+    {% endfor %}
 
 </div>
 
