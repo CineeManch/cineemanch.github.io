@@ -70,23 +70,6 @@ html, body {
     color: #fff;
 }
 
-/* MUSIC BUTTON */
-.music-toggle button {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: 0.3s;
-}
-
-.music-toggle button:hover {
-    border-color: #ff2d2d;
-    background: rgba(255,45,45,0.15);
-}
-
 /* HERO */
 .hero {
     position: relative;
@@ -237,11 +220,6 @@ html, body {
 
 <body>
 
-<!-- AUDIO -->
-<audio id="bgMusic" loop>
-    <source src="cinematic.mp3" type="audio/mpeg">
-</audio>
-
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">
@@ -255,10 +233,6 @@ html, body {
         <a href="#">Recommended</a>
         <a href="#">Box Office</a>
         <a href="#">About</a>
-    </div>
-
-    <div class="music-toggle">
-        <button onclick="toggleMusic()" id="musicBtn">🎵 Music Off</button>
     </div>
 </div>
 
@@ -279,7 +253,7 @@ html, body {
 
 <div class="divider"></div>
 
-<!-- LATEST -->
+<!-- LATEST REVIEWS -->
 <div class="latest">
     <h2>Latest Reviews</h2>
 
@@ -307,32 +281,6 @@ html, body {
 
     </div>
 </div>
-
-<!-- SCRIPT -->
-<script>
-let musicOn = false;
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-if (localStorage.getItem("musicOn") === "true") {
-    musicOn = true;
-    music.play().catch(() => {});
-    btn.innerText = "🔊 Music On";
-}
-
-function toggleMusic() {
-    if (musicOn) {
-        music.pause();
-        btn.innerText = "🎵 Music Off";
-        musicOn = false;
-    } else {
-        music.play().catch(() => {});
-        btn.innerText = "🔊 Music On";
-        musicOn = true;
-    }
-    localStorage.setItem("musicOn", musicOn);
-}
-</script>
 
 </body>
 </html>
