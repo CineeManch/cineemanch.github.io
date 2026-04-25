@@ -6,7 +6,7 @@ layout: null
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reviews - CineeManch</title>
+<title>CineeManch - Home</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -18,14 +18,14 @@ layout: null
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
+body {
     font-family: 'Inter', sans-serif;
     background: #000;
     color: #fff;
+    overflow-x: hidden;
 }
 
-/* NAV */
+/* ================= NAVBAR ================= */
 .navbar {
     position: sticky;
     top: 0;
@@ -39,132 +39,114 @@ html, body {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.logo { font-size: 24px; font-weight: 700; }
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
 .logo span { color: #ff2d2d; }
-.logo small { font-size: 11px; color: #aaa; display: block; }
+.logo small {
+    font-size: 11px;
+    color: #aaa;
+    display: block;
+}
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: #ccc;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-/* BANNER */
-.banner {
-    width: 100%;
-    height: 40vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
-                url("Banner 2.png") center/cover no-repeat;
+/* ================= HERO ================= */
+.hero {
+    height: 55vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+                url("Banner 1.png") center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 0 5%;
 }
 
-.banner h1 {
-    font-size: clamp(36px, 8vw, 80px);
+.hero h1 {
+    font-size: 50px;
 }
 
-/* CONTAINER */
-.content-width {
+.hero span {
+    color: #ff2d2d;
+}
+
+/* ================= SECTION ================= */
+.section {
     max-width: 1200px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 50px 20px;
 }
 
-/* ================= FEATURED (LATEST POST) ================= */
-.featured {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 60px;
-    background: #0a0a0a;
-    padding: 35px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
+.section h2 {
+    margin-bottom: 20px;
+    border-left: 4px solid #ff2d2d;
+    padding-left: 10px;
 }
 
-/* video */
-.featured-video {
-    flex: 2;
-    aspect-ratio: 16 / 9;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.featured-video iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* text */
-.featured-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.featured-text h2 {
-    color: #ff2d2d;
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.featured-text p {
-    color: #bbb;
-    line-height: 1.7;
-    font-size: 17px;
-}
-
-/* ================= NORMAL CARDS ================= */
-.review-item {
-    display: flex;
-    flex-direction: column;
+/* ================= 4 LATEST GRID ================= */
+.latest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    margin-bottom: 40px;
-    background: #0a0a0a;
-    padding: 25px;
-    border-radius: 18px;
 }
 
-.video-wrapper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+/* CARD */
+.card {
+    background: #0a0a0a;
     border-radius: 14px;
     overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
 }
 
-.video-wrapper iframe {
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #ff2d2d55;
+}
+
+/* VIDEO */
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-.review-text h3 {
-    color: #ff2d2d;
-    margin-bottom: 8px;
+/* TITLE */
+.card h3 {
+    padding: 10px;
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.4;
 }
 
-.review-text p {
-    color: #bbb;
-    font-size: 15px;
-    line-height: 1.7;
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .latest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-
-    .featured {
-        flex-direction: column;
+@media (max-width: 600px) {
+    .latest-grid {
+        grid-template-columns: 1fr;
     }
 
-    .featured-text h2 {
-        font-size: 24px;
+    .hero h1 {
+        font-size: 34px;
     }
 }
 
@@ -177,63 +159,45 @@ html, body {
 <nav class="navbar">
     <div class="logo">Cinee<span>Manch</span><small>सिनेमंच</small></div>
     <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="reviews.html" class="active">Reviews</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="reviews.html">Reviews</a>
         <a href="#">About</a>
     </div>
 </nav>
 
-<!-- BANNER -->
-<header class="banner">
-    <h1>Movie Reviews</h1>
+<!-- HERO -->
+<header class="hero">
+    <h1>Cinee<span>Manch</span></h1>
 </header>
 
-<!-- CONTENT -->
-<main>
-<div class="content-width">
+<!-- LATEST VIDEOS -->
+<section class="section">
 
-    {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+    <h2>Latest Reviews</h2>
 
-    <!-- 🔥 FEATURED LATEST POST -->
-    {% assign latest = sorted_posts.first %}
+    <div class="latest-grid">
 
-    {% if latest %}
-    <section class="featured">
+        {% assign sorted_posts = site.posts | sort: "date" | reverse %}
 
-        <div class="featured-video">
-            {% if latest.video %}
-            <iframe src="{{ latest.video }}" allowfullscreen></iframe>
-            {% endif %}
-        </div>
+        {% for post in sorted_posts limit:4 %}
 
-        <div class="featured-text">
-            <h2>{{ latest.title }}</h2>
-            <p>{{ latest.description | default: latest.excerpt | strip_html }}</p>
-        </div>
+        <div class="card">
 
-    </section>
-    {% endif %}
-
-    <!-- NORMAL POSTS -->
-    {% for post in sorted_posts offset:1 %}
-    <article class="review-item">
-
-        <div class="video-wrapper">
             {% if post.video %}
-            <iframe src="{{ post.video }}" allowfullscreen></iframe>
+            <div class="video">
+                <iframe src="{{ post.video }}" allowfullscreen></iframe>
+            </div>
             {% endif %}
-        </div>
 
-        <div class="review-text">
             <h3>{{ post.title }}</h3>
-            <p>{{ post.description | default: post.excerpt | strip_html }}</p>
+
         </div>
 
-    </article>
-    {% endfor %}
+        {% endfor %}
 
-</div>
-</main>
+    </div>
+
+</section>
 
 </body>
 </html>
