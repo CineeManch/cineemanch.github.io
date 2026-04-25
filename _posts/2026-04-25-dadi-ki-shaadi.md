@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Daadi Ki Shaadi Trailer Review "
-video: "https://www.youtube.com/embed/FrqmF_AEU5s"
+video: "https://www.youtube.com/embed/GB8ICqVQQMw"
 description: "Bollywood ने इस बार कुछ ऐसा कर दिया है जो family WhatsApp group भी imagine नहीं कर सकता! 😳
 यहां बहू नहीं… दादी दुल्हन बन रही है! 💀
 
