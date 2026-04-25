@@ -18,82 +18,91 @@ layout: default
             background: #000;
             color: white;
             overflow-x: hidden;
+            width: 100%;
         }
 
-        .container {
-            max-width: 1100px;
+        /* Use this for content you WANT centered, but remove it from the Banner/Nav */
+        .content-width {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
-        /* ================= NAVBAR ================= */
+        /* ================= NAVBAR (Full Width) ================= */
         .navbar {
             position: sticky;
             top: 0;
             width: 100%;
-            padding: 14px 30px;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            padding: 15px 50px; /* Wider padding for laptop screens */
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(10,10,10,0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 1000;
             box-sizing: border-box;
         }
-        .logo { font-size: 22px; font-weight: 700; }
+        .logo { font-size: 24px; font-weight: 700; }
         .logo span { color: #ff2d2d; }
-        .logo small { display: block; font-size: 11px; color: #aaa; }
-        .nav-links { display: flex; gap: 22px; justify-self: center; }
-        .nav-links a { color: #ddd; text-decoration: none; font-size: 14px; position: relative; }
+        .logo small { display: block; font-size: 12px; color: #aaa; letter-spacing: 1px; }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: #ccc; text-decoration: none; font-size: 15px; font-weight: 500; position: relative; }
         .nav-links .active { color: #fff; }
         .nav-links .active::after {
-            content: ""; position: absolute; left: 0; bottom: -4px;
+            content: ""; position: absolute; left: 0; bottom: -5px;
             width: 100%; height: 2px; background: #ff2d2d;
         }
 
-        /* ================= BANNER ================= */
+        /* ================= BANNER (Full Width) ================= */
         .banner {
-            height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("Banner 2.png") center/cover no-repeat;
+            width: 100%;
+            height: 50vh; /* Slightly taller for laptop */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("Banner 2.png") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-bottom: 2px solid #ff2d2d;
         }
         .banner h1 {
-            font-size: 46px; padding: 12px 24px;
-            border: 2px solid rgba(255,45,45,0.4);
-            background: rgba(0,0,0,0.4); margin: 0;
+            font-size: clamp(40px, 6vw, 70px); /* Responsive font size */
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 0;
         }
 
         /* ================= REVIEWS SECTION ================= */
-        .reviews-grid { padding: 60px 0; }
+        .reviews-section { padding: 80px 0; }
+        
         .review-item {
-            display: flex; gap: 30px; margin-bottom: 40px;
-            align-items: flex-start; background: #0b0b0b;
-            padding: 24px; border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
+            display: flex; gap: 40px; margin-bottom: 60px;
+            align-items: flex-start; background: #0a0a0a;
+            padding: 30px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.4s ease;
         }
         .review-item:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255,45,45,0.3);
+            transform: scale(1.01);
+            border-color: rgba(255,45,45,0.5);
+            box-shadow: 0 20px 40px rgba(255,45,45,0.05);
         }
-        .video-wrapper { flex: 0 0 45%; aspect-ratio: 16 / 9; }
+        
+        .video-wrapper { flex: 0 0 50%; aspect-ratio: 16 / 9; }
         .video-wrapper iframe {
-            width: 100%; height: 100%; border-radius: 10px;
-            border: none; background: #1a1a1a;
+            width: 100%; height: 100%; border-radius: 12px;
+            border: none; background: #111;
         }
+        
         .review-text { flex: 1; }
-        .review-text h2 { margin: 0 0 12px 0; color: #ff2d2d; font-size: 24px; }
-        .review-text p { color: #ccc; line-height: 1.6; font-size: 15px; margin: 0; }
+        .review-text h2 { margin: 0 0 20px 0; color: #ff2d2d; font-size: 28px; font-weight: 700; }
+        .review-text p { color: #aaa; line-height: 1.8; font-size: 17px; margin: 0; }
 
-        @media (max-width: 768px) {
-            .navbar { grid-template-columns: 1fr auto; }
-            .nav-links { display: none; }
-            .review-item { flex-direction: column; padding: 15px; }
-            .video-wrapper { width: 100%; }
-            .banner h1 { font-size: 32px; }
+        @media (max-width: 992px) {
+            .review-item { flex-direction: column; }
+            .video-wrapper { width: 100%; flex: none; }
+            .navbar { padding: 15px 20px; }
         }
     </style>
 </head>
@@ -114,32 +123,34 @@ layout: default
         <h1>Movie Reviews</h1>
     </header>
 
-    <main class="container reviews-grid">
-        {% for post in site.posts %}
-        <article class="review-item">
-            <div class="video-wrapper">
-                {% if post.video %}
-                    <iframe 
-                        src="{{ post.video }}" 
-                        title="{{ post.title }}"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                {% else %}
-                    <div style="background:#222; height:100%; display:flex; align-items:center; justify-content:center; border-radius:10px; color:#666;">
-                        Video unavailable
-                    </div>
-                {% endif %}
-            </div>
-            
-            <div class="review-text">
-                <h2>{{ post.title | default: "Review Coming Soon" }}</h2>
-                <p>
-                    {{ post.description | default: post.excerpt | strip_html | truncate: 180 }}
-                </p>
-            </div>
-        </article>
-        {% endfor %}
+    <main class="reviews-section">
+        <div class="content-width">
+            {% for post in site.posts %}
+            <article class="review-item">
+                <div class="video-wrapper">
+                    {% if post.video %}
+                        <iframe 
+                            src="{{ post.video }}" 
+                            title="{{ post.title }}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    {% else %}
+                        <div style="background:#1a1a1a; height:100%; display:flex; align-items:center; justify-content:center; border-radius:12px; color:#444;">
+                            [ No Video in Markdown ]
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="review-text">
+                    <h2>{{ post.title | default: "Coming Soon" }}</h2>
+                    <p>
+                        {{ post.description | default: post.excerpt | strip_html | truncate: 250 }}
+                    </p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
     </main>
 
 </body>
