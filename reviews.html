@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews - CineeManch</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
+}
+
+/* HERO BANNER */
+.banner {
+    height: 50vh;
+    background: url("Banner 2.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 50px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+}
+
+/* REVIEW SECTION */
+.reviews {
+    padding: 40px;
+}
+
+.review-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+/* VIDEO */
+.review-item iframe {
+    width: 50%;
+    height: 280px;
+    border-radius: 10px;
+}
+
+/* TEXT */
+.review-text {
+    width: 50%;
+}
+
+.review-text h2 {
+    margin-top: 0;
+    color: red;
+}
+
+.review-text p {
+    color: #ccc;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .review-item {
+        flex-direction: column;
+    }
+
+    .review-item iframe,
+    .review-text {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BANNER -->
+<div class="banner">
+    <h1>Reviews</h1>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews">
+
+    <!-- VIDEO 1 -->
+    <div class="review-item">
+        <iframe src="https://www.youtube.com/embed/GB8ICqVQQMw" allowfullscreen></iframe>
+
+        <div class="review-text">
+            <h2>Daadi Ki Shaadi Trailer Review</h2>
+            <p>
+                In this review, we break down the trailer, highlight the key moments,
+                and give our honest opinion about whether it's worth watching.
+            </p>
+        </div>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="review-item">
+        <iframe src="https://www.youtube.com/embed/FrqmF_AEU5s" allowfullscreen></iframe>
+
+        <div class="review-text">
+            <h2>Raja Shivaji Review</h2>
+            <p>
+                A detailed analysis of the trailer, performances, and what to expect
+                from the movie.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
