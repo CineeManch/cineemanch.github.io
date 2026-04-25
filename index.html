@@ -5,38 +5,59 @@
 <title>CineeManch</title>
 
 <style>
-body {
+html, body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background: #000;
     color: white;
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* NAVBAR (STICKY) */
+/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
     width: 100%;
-    padding: 15px 40px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(0,0,0,0.9);
     backdrop-filter: blur(6px);
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
-.logo { font-size: 24px; font-weight: bold; }
-.logo span { color: red; }
-.logo small { display: block; font-size: 12px; color: #ccc; }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: red;
+}
+
+.logo small {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin: 0 12px;
+    margin: 5px 10px;
     font-size: 14px;
     transition: 0.3s;
 }
+
 .nav-links a:hover,
 .nav-links .active {
     color: red;
@@ -71,7 +92,9 @@ body {
     margin: 0;
 }
 
-.hero-content span { color: red; }
+.hero-content span {
+    color: red;
+}
 
 .hero-content p {
     color: #ccc;
@@ -85,6 +108,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    display: inline-block;
 }
 
 .btn-red {
@@ -130,13 +154,12 @@ body {
 }
 
 .video-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .video-card iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-    height: auto;
     border: none;
 }
 
@@ -149,12 +172,14 @@ body {
     margin: 0;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
+@media (max-width: 768px) {
     .hero {
         padding-left: 20px;
     }
@@ -163,6 +188,12 @@ body {
         font-size: 36px;
     }
 
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
     .video-grid {
         grid-template-columns: 1fr;
     }
@@ -185,7 +216,7 @@ body {
         <a href="#">Recommended Movies</a>
         <a href="#">Box Office</a>
         <a href="#">About Us</a>
-        <a href="#">sSearch</a>
+        <a href="#">Search</a>
     </div>
 </div>
 
