@@ -136,6 +136,39 @@ html, body {
 
     .review-item {
         flex-direction: row;
+        align-items: stretch;   /* 🔥 IMPORTANT FIX */
+        gap: 40px;
+        padding: 35px;
+    }
+
+    .video-wrapper {
+        flex: 1.8;             /* 🔥 BIGGER VIDEO */
+        min-width: 58%;
+    }
+
+    .video-wrapper iframe {
+        height: 100%;
+    }
+
+    .review-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* 🔥 FIX ALIGNMENT */
+    }
+
+    .review-text h2 {
+        font-size: 30px;
+    }
+
+    .review-text p {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+}
+
+    .review-item {
+        flex-direction: row;
         align-items: center;
         gap: 35px;
         padding: 35px;
