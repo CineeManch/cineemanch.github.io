@@ -36,7 +36,7 @@ html, body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    background: rgba(10,10,10,0.85);
+    background: rgba(10,10,10,0.95);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     z-index: 1000;
@@ -49,6 +49,7 @@ html, body {
 .logo span { color: #ff2d2d; }
 .logo small { display: block; font-size: 11px; color: #aaa; }
 
+/* NAV LINKS */
 .nav-links {
     display: flex;
     gap: 22px;
@@ -59,6 +60,14 @@ html, body {
     color: #ddd;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    justify-self: end;
 }
 
 /* ================= HERO ================= */
@@ -90,7 +99,7 @@ html, body {
     margin-bottom: 28px;
 }
 
-/* buttons */
+/* BUTTONS */
 .buttons a {
     padding: 12px 24px;
     margin-right: 10px;
@@ -99,14 +108,14 @@ html, body {
     font-weight: 600;
 }
 
-/* ================= DIVIDER ================= */
+/* DIVIDER */
 .divider {
     height: 1px;
     margin: 45px 6%;
     background: linear-gradient(to right, transparent, #ff2d2d, transparent);
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 .latest {
     padding: 30px 6% 70px;
 }
@@ -118,14 +127,13 @@ html, body {
     font-size: 22px;
 }
 
-/* ================= GRID (IMPROVED SPACING) ================= */
+/* GRID */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 26px;
 }
 
-/* CARD (BIGGER + MORE PREMIUM) */
 .video-card {
     background: #0b0b0b;
     border-radius: 14px;
@@ -140,23 +148,19 @@ html, body {
     box-shadow: 0 12px 35px rgba(0,0,0,0.6);
 }
 
-/* BIGGER VIDEO (IMPORTANT CHANGE) */
 .video-card iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-    height: 180px; /* 🔥 increased visual weight */
+    height: 180px;
     border: none;
 }
 
-/* INFO */
 .video-card .info {
     padding: 14px;
 }
 
 .video-card h3 {
     font-size: 15px;
-    color: #fff;
-    line-height: 1.4;
 }
 
 /* ================= MOBILE ================= */
@@ -168,8 +172,25 @@ html, body {
 
 @media (max-width: 768px) {
 
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 0;
         display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .hero {
@@ -193,15 +214,15 @@ html, body {
         <small>सिनेमंच</small>
     </div>
 
-    <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
         <a href="reviews.html">Reviews</a>
         <a href="recommended-movie.html">Recommended Movie</a>
         <a href="#">Box Office</a>
         <a href="#">About Us</a>
     </div>
 
-    <div></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HERO -->
@@ -211,8 +232,8 @@ html, body {
         <p>सिनेमा की हर बात, हमारे साथ</p>
 
         <div class="buttons">
-            <a href="reviews.html" class="btn-red" style="background:#ff2d2d;color:white;">▶ Watch Latest</a>
-            <a href="#" class="btn-outline" style="border:1px solid white;color:white;">Must Watch</a>
+            <a href="reviews.html" style="background:#ff2d2d;color:white;">▶ Watch Latest</a>
+            <a href="#" style="border:1px solid white;color:white;">Must Watch</a>
         </div>
     </div>
 </header>
@@ -224,25 +245,25 @@ html, body {
     <h2>Latest Reviews</h2>
 
     <div class="video-grid">
-
         {% for post in site.posts limit:4 %}
-
         <article class="video-card">
-
             {% if post.video %}
             <iframe src="{{ post.video }}" loading="lazy" allowfullscreen></iframe>
             {% endif %}
-
             <div class="info">
                 <h3>{{ post.title | default: "New Review" }}</h3>
             </div>
-
         </article>
-
         {% endfor %}
-
     </div>
 </main>
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
