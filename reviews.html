@@ -113,6 +113,18 @@ html, body {
     width: 100%;
     height: 100%;
     border: none;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+/* 🔥 ZOOM + BRIGHTNESS */
+.review-item:hover .video-wrapper iframe {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+/* 🔥 GLOW EFFECT */
+.review-item:hover .video-wrapper {
+    box-shadow: 0 0 25px rgba(255, 45, 45, 0.6);
 }
 
 /* ================= TEXT ================= */
