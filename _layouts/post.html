@@ -1,25 +1,112 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+
+<style>
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Inter, sans-serif;
+}
+
+/* CONTAINER */
+.post-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.back-btn:hover {
+    opacity: 1;
+}
+
+/* VIDEO */
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* TITLE */
+h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #ff2d2d;
+}
+
+/* META */
+.meta {
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* DESCRIPTION */
+.description {
+    margin-top: 20px;
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
 <div class="post-container">
-    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Feed</a>
 
-    <article class="video-spotlight">
+    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
 
-        <div class="video-wrapper">
-            <iframe 
-                src="{{ page.video }}"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
-        </div>
+    <!-- VIDEO -->
+    <div class="video-wrapper">
+        <iframe src="{{ page.video }}" allowfullscreen></iframe>
+    </div>
 
-        <div class="video-details">
-            <h1>{{ page.title }}</h1>
-            <p class="meta">Rating: {{ page.rating }}</p>
-            <hr>
+    <!-- TITLE -->
+    <h1>{{ page.title }}</h1>
 
-            <div class="description">
-                {{ content }}
-            </div>
-        </div>
+    <!-- RATING -->
+    <div class="meta">Rating: {{ page.rating }}</div>
 
-    </article>
+    <!-- DESCRIPTION -->
+    <div class="description">
+        {{ page.description }}
+    </div>
+
 </div>
+
+</body>
+</html>
