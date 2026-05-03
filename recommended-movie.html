@@ -20,7 +20,7 @@ body {
     color: #fff;
 }
 
-/* NAVBAR (OVERLAY 🔥) */
+/* NAVBAR (OVERLAY) */
 .navbar {
     position: absolute;
     top: 0;
@@ -58,35 +58,33 @@ body {
 
 .nav-links .active { color: #fff; }
 
-/* BANNER */
+/* BANNER (FULL IMAGE, NO CROP) */
 .banner {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
 
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)),
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.95)),
                 url("Banner 3.png");
 
-    background-size: cover;
-    background-position: top center; /* 🔥 KEY FIX */
+    background-size: contain; /* 🔥 no crop */
+    background-position: center top;
     background-repeat: no-repeat;
+    background-color: #000;
 
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 
-    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
-.banner h1 {
-    font-size: clamp(36px, 8vw, 80px);
-    letter-spacing: 4px;
-}
-
-/* CONTENT */
+/* CONTENT (OVERLAP EFFECT 🔥) */
 .content-width {
     max-width: 1200px;
-    margin: auto;
-    padding: 70px 25px;
+    margin: -80px auto 0; /* 🔥 overlap banner */
+    padding: 40px 25px 70px;
+    position: relative;
+    z-index: 2;
 }
 
 /* CARD */
@@ -98,6 +96,13 @@ body {
     background: #0a0a0a;
     padding: 25px;
     border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.3s;
+}
+
+.review-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,45,45,0.4);
 }
 
 /* VIDEO */
@@ -110,23 +115,41 @@ body {
     width: 100%;
     height: 100%;
     border: none;
+    border-radius: 10px;
 }
 
 /* TEXT */
 .review-text h2 {
     color: #ff2d2d;
+    margin-bottom: 5px;
 }
 
 .rating {
     color: #ff2d2d;
     font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .desc-text {
     color: #bbb;
-    margin-top: 10px;
+    line-height: 1.6;
 }
 
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .review-item {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .video-wrapper {
+        flex: 2;
+    }
+
+    .review-text {
+        flex: 1;
+    }
+}
 </style>
 </head>
 
@@ -140,9 +163,9 @@ body {
     </div>
 
     <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="reviews.html" class="active">Reviews</a>
-        <a href="recommended-movie.html">Recommended Movie</a>
+        <a href="/index.html">Home</a>
+        <a href="/reviews.html">Reviews</a>
+        <a href="/recommended-movie.html" class="active">Recommended Movie</a>
         <a href="#">Box Office</a>
         <a href="#">About Us</a>
     </div>
@@ -151,9 +174,7 @@ body {
 </nav>
 
 <!-- BANNER -->
-<header class="banner">
-    <h1>Recommended</h1>
-</header>
+<header class="banner"></header>
 
 <!-- CONTENT -->
 <main>
