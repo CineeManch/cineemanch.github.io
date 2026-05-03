@@ -1,68 +1,13 @@
 ---
-layout: null
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reviews - CineeManch</title>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-/* GLOBAL RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    min-height: 100vh;
-    font-family: Inter, sans-serif;
-    background: #000;
-    color: #fff;
-}
-
-/* NAVBAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 14px 5%;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-}
-.logo span { color: #ff2d2d; }
-.logo small { font-size: 11px; color: #aaa; display: block; }
-
-.nav-links {
-    display: flex;
-    gap: 22px;
-    justify-self: center;
-}
-
-.nav-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.nav-links .active {
-    color: #fff;
+/* PAGE WRAPPER */
+.content-width {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
 /* BANNER */
@@ -79,13 +24,7 @@ html, body {
 .banner h1 {
     font-size: clamp(36px, 8vw, 80px);
     letter-spacing: 4px;
-}
-
-/* CONTENT */
-.content-width {
-    max-width: 1200px;
-    margin: auto;
-    padding: 60px 20px;
+    color: #fff;
 }
 
 /* GRID */
@@ -95,7 +34,7 @@ html, body {
     gap: 22px;
 }
 
-/* LINK WRAPPER */
+/* LINK */
 .review-link {
     text-decoration: none;
     color: inherit;
@@ -128,6 +67,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* TEXT */
@@ -138,6 +78,7 @@ html, body {
 .review-text h2 {
     font-size: 15px;
     margin-bottom: 6px;
+    color: #fff;
 }
 
 .review-text p {
@@ -146,34 +87,13 @@ html, body {
     line-height: 1.5;
 }
 
-/* OPTIONAL RATING STYLE (if you add later) */
+/* RATING */
 .rating {
     margin-top: 6px;
     font-size: 12px;
     color: #ff2d2d;
 }
 </style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav class="navbar">
-    <div class="logo">
-        Cinee<span>Manch</span>
-        <small>सिनेमंच</small>
-    </div>
-
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="reviews.html" class="active">Reviews</a>
-        <a href="recommended-movie.html">Recommended Movie</a>
-        <a href="#">Box Office</a>
-        <a href="#">About Us</a>
-    </div>
-
-    <div></div>
-</nav>
 
 <!-- BANNER -->
 <header class="banner">
@@ -190,24 +110,30 @@ html, body {
 
         {% for post in sorted_posts %}
 
+        {% assign video_id = post.video
+            | replace: "https://www.youtube.com/embed/", ""
+            | replace: "https://youtu.be/", ""
+            | split: "?"
+            | first %}
+
         <a href="{{ post.url }}" class="review-link">
 
             <div class="review-item">
 
                 <!-- THUMBNAIL -->
                 <div class="thumb">
-                    <img src="https://img.youtube.com/vi/{{ post.video | split: '/' | last }}/hqdefault.jpg">
+                    <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="{{ post.title }}">
                 </div>
 
                 <!-- TEXT -->
                 <div class="review-text">
+
                     <h2>{{ post.title }}</h2>
 
                     <p>
                         {{ post.description | strip_html | truncate: 120 }}
                     </p>
 
-                    <!-- OPTIONAL RATING -->
                     {% if post.rating %}
                     <div class="rating">
                         ⭐ {{ post.rating }}/10
@@ -226,6 +152,3 @@ html, body {
 
 </div>
 </main>
-
-</body>
-</html>
