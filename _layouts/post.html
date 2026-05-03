@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title }}</title>
+<div class="post-container">
+    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Feed</a>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: black;
-    color: white;
-}
+    <article class="video-spotlight">
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
+        <div class="video-wrapper">
+            <iframe 
+                src="{{ page.video }}"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border: none;
-    border-radius: 10px;
-}
+        <div class="video-details">
+            <h1>{{ page.title }}</h1>
+            <p class="meta">Rating: {{ page.rating }}</p>
+            <hr>
 
-h1 {
-    color: red;
-}
-</style>
-</head>
+            <div class="description">
+                {{ content }}
+            </div>
+        </div>
 
-<body>
-
-<div class="container">
-
-    <h1>{{ page.title }}</h1>
-
-    <iframe src="{{ page.video }}"></iframe>
-
-    <p>{{ page.description }}</p>
-
-    <div>
-        {{ content }}
-    </div>
-
+    </article>
 </div>
-
-</body>
-</html>
