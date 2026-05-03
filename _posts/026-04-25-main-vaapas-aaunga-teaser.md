@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Main Vaapas Aaunga Teaser Review: Diljit & Imtiaz Magic?"
-video: "https://www.youtube.com/embed/pghgi9OfIx4
+video: "https://www.youtube.com/embed/pghgi9OfIx4"
 description: "इम्तियाज अली और दिलजीत दोसांझ की जोड़ी वापस आ रही है! 🎻 
 क्या 'Main Vaapas Aaunga' फिर से 'Chamkila' जैसा जादू कर पाएगी?
 
