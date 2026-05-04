@@ -10,5 +10,4 @@ Original vs Remake: Why Mohanlal’s performance proves that the original Drishy
 The Masterstroke: Analyzing Jeethu Joseph’s track record and the "Safe Game" played in this teaser.
 The Confession: Is Mohanlal’s voice a story or a final confession?"
 date: 2026-05-04
-rating: 0
 ---
