@@ -1,3 +1,4 @@
+---
 layout: post
 title: "JAPAN COOKED 🔥 | Inuyashiki- Best Live-Action? 🤖 | Movie Review"
 video: "https://www.youtube.com/embed/aJlfQ786tVo"
@@ -15,3 +16,4 @@ In short—Prime pe jao aur bina soche dekh lo. 😶🔥
 बाकी… ये तो थी मेरी राय। अब आपकी बारी — कमेंट सेक्शन में ज़रूर बताइए। क्योंकि फिल्म का सच और असली फीचर… सब बताएगा जनता का मीटर!"
 date: 2026-05-09
 rating: 7
+---
