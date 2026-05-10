@@ -3,15 +3,13 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Homepage -->
   <url>
     <loc>https://www.cineemanch.com/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>2026-05-10T17:03:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Static Pages -->
   <url>
     <loc>https://www.cineemanch.com/reviews.html</loc>
     <changefreq>weekly</changefreq>
