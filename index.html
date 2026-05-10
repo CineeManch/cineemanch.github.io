@@ -4,358 +4,158 @@ layout: null
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CineeManch - सिनेमा की हर बात, हमारे साथ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Essential Tags -->
+    <title>CineeManch - सिनेमा की हर बात, हमारे साथ</title>
+    <meta name="description" content="CineeManch (सिनेमंच) पर पाएं बॉलीवुड फिल्मों के सबसे सटीक रिव्यू, लेटेस्ट बॉक्स ऑफिस कलेक्शन और रिकमेंडेड मूवीज की पूरी जानकारी।">
+    <link rel="canonical" href="https://www.cineemanch.com/" />
+    <meta name="robots" content="index, follow">
 
-<meta name="description" content="CineeManch (सिनेमंच) पर पाएं बॉलीवुड फिल्मों के सबसे सटीक रिव्यू, लेटेस्ट बॉक्स ऑफिस कलेक्शन और रिकमेंडेड मूवीज की पूरी जानकारी।">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cineemanch.com/">
+    <meta property="og:title" content="CineeManch - सिनेमा की हर बात, हमारे साथ">
+    <meta property="og:description" content="बॉलीवुड फिल्मों के सटीक रिव्यू और लेटेस्ट बॉक्स ऑफिस कलेक्शन।">
+    <meta property="og:image" content="https://www.cineemanch.com/Banner 1.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://img.youtube.com">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CineeManch">
+    <meta name="twitter:description" content="बॉलीवुड फिल्मों के सटीक रिव्यू।">
+    <meta name="twitter:image" content="https://www.cineemanch.com/Banner 1.jpg">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-/* RESET */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    width: 100%;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-/* ================= NAVBAR ================= */
-.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 14px 5%;
-    display: grid;
-    grid-template-columns: auto 1fr auto; 
-    align-items: center;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #fff;
-}
-.logo span { color: #ff2d2d; }
-.logo small { display: block; font-size: 11px; color: #aaa; }
-
-/* NAV LINKS WITH RED HOVER EFFECT */
-.nav-links {
-    display: flex;
-    gap: 22px;
-    justify-content: center;
-}
-
-.nav-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-    position: relative;
-}
-
-/* THE HOVER COLOR & SLIDING LINE */
-.nav-links a:hover {
-    color: #ff2d2d;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #ff2d2d;
-    transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    justify-self: end;
-    text-align: right;
-}
-
-/* ================= HERO ================= */
-.hero {
-    position: relative;
-    height: 50vh;
-    min-height: 420px;
-    /* Linked your optimized 245 KB JPG with a cache-buster */
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                url("Banner 1.jpg?v=1") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 0 6%;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.hero-content h1 {
-    font-size: clamp(42px, 6vw, 70px);
-    margin-bottom: 12px;
-}
-
-.hero-content span { color: #ff2d2d; }
-
-.hero-content p {
-    color: #bbb;
-    font-size: 1.2rem;
-    margin-bottom: 28px;
-}
-
-/* BUTTONS */
-.buttons a {
-    padding: 12px 24px;
-    margin-right: 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-/* DIVIDER */
-.divider {
-    height: 1px;
-    margin: 45px 6%;
-    background: linear-gradient(to right, transparent, #ff2d2d, transparent);
-}
-
-/* SECTION */
-.latest {
-    padding: 30px 6% 70px;
-}
-
-.latest h2 {
-    border-left: 4px solid #ff2d2d;
-    padding-left: 12px;
-    margin-bottom: 35px;
-    font-size: 22px;
-}
-
-/* GRID */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
-}
-
-.video-card {
-    background: #0b0b0b;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: 0.3s;
-}
-
-.video-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255,45,45,0.4);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
-}
-
-/* LIGHT YOUTUBE EMBED PLAYER STYLES */
-.video-card .youtube-placeholder {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: 180px;
-    background: #000;
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.video-card .youtube-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.video-card .youtube-placeholder:hover img {
-    transform: scale(1.05);
-}
-
-/* Centered Widescreen Play Icon */
-.video-card .play-button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 45, 45, 0.9);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    padding-left: 3px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: 0.3s ease;
-}
-
-.video-card .youtube-placeholder:hover .play-button {
-    background: #ff2d2d;
-    transform: scale(1.1);
-}
-
-.video-card iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: 180px;
-    border: none;
-}
-
-.video-card .info {
-    padding: 14px;
-}
-
-.video-card h3 {
-    font-size: 15px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 1024px) {
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
+    <!-- Structured Data (JSON-LD) - This helps Google show "Rich Results" -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CineeManch",
+      "url": "https://www.cineemanch.com/",
+      "description": "Bollywood Movie Reviews and Box Office Collection",
+      "inLanguage": "hi"
     }
-}
+    </script>
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://img.youtube.com">
 
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #000;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        padding: 20px 0;
-        display: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-    .nav-links.active {
-        display: flex;
-    }
+        /* RESET */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { width: 100%; min-height: 100vh; font-family: 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
 
-    .hero {
-        height: 55vh;
-    }
+        /* NAVBAR */
+        .navbar { position: sticky; top: 0; width: 100%; padding: 14px 5%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; background: rgba(10,10,10,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
+        .logo { font-size: 22px; font-weight: 700; text-decoration: none; color: #fff; }
+        .logo span { color: #ff2d2d; }
+        .logo small { display: block; font-size: 11px; color: #aaa; }
+        .nav-links { display: flex; gap: 22px; justify-content: center; }
+        .nav-links a { color: #ddd; text-decoration: none; font-size: 14px; transition: 0.3s; position: relative; }
+        .nav-links a:hover { color: #ff2d2d; }
+        .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0%; height: 2px; background: #ff2d2d; transition: 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; justify-self: end; }
 
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        /* HERO */
+        .hero { position: relative; height: 50vh; min-height: 420px; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("Banner 1.jpg?v=1") center/cover no-repeat; display: flex; align-items: center; padding: 0 6%; }
+        .hero-content { max-width: 700px; }
+        .hero-content h1 { font-size: clamp(42px, 6vw, 70px); margin-bottom: 12px; }
+        .hero-content span { color: #ff2d2d; }
+        .hero-content p { color: #bbb; font-size: 1.2rem; margin-bottom: 28px; }
+        .buttons a { padding: 12px 24px; margin-right: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
 
-</style>
+        /* GRID */
+        .divider { height: 1px; margin: 45px 6%; background: linear-gradient(to right, transparent, #ff2d2d, transparent); }
+        .latest { padding: 30px 6% 70px; }
+        .latest h2 { border-left: 4px solid #ff2d2d; padding-left: 12px; margin-bottom: 35px; font-size: 22px; }
+        .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+        .video-card { background: #0b0b0b; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: 0.3s; }
+        .video-card:hover { transform: translateY(-8px); border-color: rgba(255,45,45,0.4); box-shadow: 0 12px 35px rgba(0,0,0,0.6); }
+        .video-card .youtube-placeholder { width: 100%; aspect-ratio: 16 / 9; height: 180px; background: #000; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .video-card .youtube-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .video-card .play-button { position: absolute; width: 50px; height: 50px; background: rgba(255, 45, 45, 0.9); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; padding-left: 3px; }
+        .video-card iframe { width: 100%; aspect-ratio: 16 / 9; height: 180px; border: none; }
+        .video-card .info { padding: 14px; }
+        .video-card h3 { font-size: 15px; line-height: 1.4; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 60px; left: 0; width: 100%; background: #000; flex-direction: column; align-items: center; gap: 18px; padding: 20px 0; display: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .nav-links.active { display: flex; }
+            .hero { height: 55vh; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
-
-<nav class="navbar">
-    <a href="index.html" class="logo">
-        Cinee<span>Manch</span>
-        <small>सिनेमंच</small>
-    </a>
-
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="recommended-movie.html">Recommended Movie</a>
-        <a href="#">Box Office</a>
-        <a href="about-us.html">About Us</a>
-    </div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</nav>
-
-<header class="hero">
-    <div class="hero-content">
-        <h1>Cinee<span>Manch</span></h1>
-        <p>सिनेमा की हर बात, हमारे साथ</p>
-
-        <div class="buttons">
-            <a href="reviews.html" style="background:#ff2d2d;color:white;">▶ Watch Latest</a>
-            <a href="recommended-movie.html" style="border:1px solid white;color:white;">Must Watch</a>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="logo">
+            Cinee<span>Manch</span>
+            <small>सिनेमंच</small>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="recommended-movie.html">Recommended Movie</a>
+            <a href="#">Box Office</a>
+            <a href="about-us.html">About Us</a>
         </div>
-    </div>
-</header>
+        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Open Menu">☰</div>
+    </nav>
 
-<div class="divider"></div>
-
-<main class="latest">
-    <h2>Latest Reviews</h2>
-
-    <div class="video-grid">
-        {% for post in site.posts limit:4 %}
-        <article class="video-card">
-            {% if post.video %}
-                {% assign video_id = post.video | split: '/embed/' | last | split: '?' | first %}
-                
-                <div class="youtube-placeholder" title="{{ post.title | default: 'Play Review' }}" onclick="activateVideo(this, '{{ video_id }}')">
-                    <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Video Thumbnail" loading="lazy">
-                    <div class="play-button">▶</div>
-                </div>
-            {% endif %}
-            <div class="info">
-                <h3>{{ post.title | default: "New Review" }}</h3>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Cinee<span>Manch</span></h1>
+            <p>सिनेमा की हर बात, हमारे साथ</p>
+            <div class="buttons">
+                <a href="reviews.html" style="background:#ff2d2d;color:white;">▶ Watch Latest</a>
+                <a href="recommended-movie.html" style="border:1px solid white;color:white;">Must Watch</a>
             </div>
-        </article>
-        {% endfor %}
-    </div>
-</main>
+        </div>
+    </header>
 
-<script>
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
+    <div class="divider"></div>
 
-/* Injects active interactive iframe cleanly ONLY when clicked */
-function activateVideo(element, videoId) {
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-    iframe.setAttribute('allowfullscreen', 'true');
-    iframe.setAttribute('title', 'YouTube video player');
-    
-    element.parentNode.replaceChild(iframe, element);
-}
-</script>
+    <main class="latest" id="main-content">
+        <h2>Latest Reviews</h2>
+        <div class="video-grid">
+            {% for post in site.posts limit:4 %}
+            <article class="video-card">
+                {% if post.video %}
+                    {% assign video_id = post.video | split: '/embed/' | last | split: '?' | first %}
+                    <div class="youtube-placeholder" title="Play Review: {{ post.title }}" onclick="activateVideo(this, '{{ video_id }}')">
+                        <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="{{ post.title }} Thumbnail" loading="lazy">
+                        <div class="play-button" aria-hidden="true">▶</div>
+                    </div>
+                {% endif %}
+                <div class="info">
+                    <h3>{{ post.title | default: "New Review" }}</h3>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
 
+    <script>
+        function toggleMenu() { 
+            document.getElementById("navLinks").classList.toggle("active"); 
+        }
+        function activateVideo(element, videoId) {
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.setAttribute('title', 'YouTube video player');
+            element.parentNode.replaceChild(iframe, element);
+        }
+    </script>
 </body>
 </html>
