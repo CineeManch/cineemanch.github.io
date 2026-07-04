@@ -26,7 +26,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= NAVBAR (SAME AS INDEX) ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     position: sticky;
     top: 0;
@@ -60,7 +60,6 @@ body {
     font-size: 14px;
 }
 
-/* ================= MENU ================= */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -75,7 +74,6 @@ body {
     padding: 40px 20px;
 }
 
-/* BACK BUTTON */
 .back-btn {
     display: inline-block;
     margin-bottom: 20px;
@@ -104,21 +102,19 @@ body {
     border: none;
 }
 
-/* ================= TITLE ================= */
+/* ================= CONTENT ================= */
 h1 {
     margin-top: 20px;
     font-size: 28px;
     color: #ff2d2d;
 }
 
-/* ================= META ================= */
 .meta {
     color: #aaa;
     margin-top: 6px;
     font-size: 14px;
 }
 
-/* ================= DESCRIPTION ================= */
 .description {
     margin-top: 20px;
     color: #bbb;
@@ -128,9 +124,15 @@ h1 {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .menu-toggle { display: block; }
-    h1 { font-size: 22px; }
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    h1 {
+        font-size: 22px;
+    }
 }
 </style>
 </head>
@@ -142,6 +144,7 @@ h1 {
         Cinee<span>Manch</span>
         <small>सिनेमंच</small>
     </div>
+
     <div class="nav-links">
         <a href="{{ site.baseurl }}/index.html">Home</a>
         <a href="{{ site.baseurl }}/reviews.html">Reviews</a>
@@ -149,6 +152,7 @@ h1 {
         <a href="#">Box Office</a>
         <a href="#">About</a>
     </div>
+
     <div class="menu-toggle">☰</div>
 </nav>
 
@@ -175,10 +179,14 @@ h1 {
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const iframe = document.getElementById("reviewVideo");
-        let rawUrl = iframe.getAttribute("data-raw-src").trim();
+        if (!iframe) return;
+        
+        let rawUrl = iframe.getAttribute("data-raw-src") ? iframe.getAttribute("data-raw-src").trim() : "";
         let videoId = "";
 
-        // 1. Extract Video ID from any type of YouTube link
+        if (!rawUrl) return;
+
+        // Extract Video ID
         if (rawUrl.includes("youtube.com/embed/")) {
             videoId = rawUrl.split("youtube.com/embed/")[1].split("?")[0];
         } else if (rawUrl.includes("youtube.com/watch")) {
@@ -188,11 +196,10 @@ h1 {
             videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
         }
 
-        // 2. Build the perfect embed URL with global autoplay and mute policies override
+        // Build URL
         if (videoId) {
             iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&showinfo=0`;
         } else {
-            // Fallback: If URL format is unrecognized, pass it with parameters anyway
             iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1&mute=1' : rawUrl + '?autoplay=1&mute=1';
         }
     });
