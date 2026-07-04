@@ -45,5 +45,5 @@ Baaki... ye toh thi meri opinion.
 Aapko Alpha kaisi lagi?
 Comments me apna review zaroor batao 👇"
 date: 2026-07-04
-rating: 7/10
+rating: 7
 ---
