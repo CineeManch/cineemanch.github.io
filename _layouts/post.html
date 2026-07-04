@@ -144,7 +144,8 @@ h1 {
   "@type": "Review",
   "itemReviewed": {
     "@type": "Movie",
-    "name": "{{ page.title | split: ':' | first | remove: 'Movie Review' | strip | escape }}"
+    "name": "{{ page.title | split: ':' | first | remove: 'Movie Review' | strip | escape }}",
+    "image": "https://www.cineemanch.com/assets/images/default-movie.jpg"
   },
   "reviewRating": {
     "@type": "Rating",
@@ -159,7 +160,11 @@ h1 {
   "publisher": {
     "@type": "Organization",
     "name": "CineeManch",
-    "url": "https://www.cineemanch.com"
+    "url": "https://www.cineemanch.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cineemanch.com/assets/images/logo.png"
+    }
   },
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "reviewBody": "{{ page.description | strip_html | strip_newlines | truncate: 150 | escape }}"
