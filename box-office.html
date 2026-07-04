@@ -8,9 +8,7 @@ layout: null
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Box Office Collection - लेटेस्ट फिल्मों की कमाई | CineeManch</title>
-
-    <meta name="description" content="CineeManch (सिनेमंच) पर देखें बॉलीवुड, हॉलीवुड और साउथ फिल्मों के लेटेस्ट बॉक्स ऑफिस收藏, बजट और सटीक कमाई के आंकड़े।">
-
+    <meta name="description" content="CineeManch (सिनेमंच) पर देखें बॉलीवुड, हॉलीवुड और साउथ फिल्मों के लेटेस्ट बॉक्स ऑफिस कलेक्शन।">
     <link rel="canonical" href="https://www.cineemanch.com/box-office.html">
     <meta name="robots" content="index, follow">
 
@@ -58,7 +56,6 @@ layout: null
             color: #fff;
             display: block;
         }
-
         .logo span { color: #ff2d2d; }
         .logo small {
             display: block;
@@ -72,7 +69,6 @@ layout: null
             gap: 22px;
             justify-content: center;
         }
-
         .nav-links a {
             color: #ddd;
             text-decoration: none;
@@ -81,17 +77,12 @@ layout: null
             position: relative;
             font-weight: 500;
         }
-
         .nav-links a:hover, .nav-links a.active { color: #ff2d2d; }
         .nav-links a::after {
             content: "";
             position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0%;
-            height: 2px;
-            background: #ff2d2d;
-            transition: 0.3s;
+            left: 0; bottom: -4px; width: 0%; height: 2px;
+            background: #ff2d2d; transition: 0.3s;
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
@@ -102,7 +93,7 @@ layout: null
             justify-self: end;
         }
 
-        /* HERO WITH GRADIENT BANNER DESIGN */
+        /* HERO BANNER */
         .hero {
             position: relative;
             height: 45vh;
@@ -113,29 +104,18 @@ layout: null
             padding: 0 6%;
             overflow: hidden;
         }
-
         .hero-content { max-width: 800px; position: relative; z-index: 5; }
-        .hero-content h1 {
-            font-size: clamp(36px, 5vw, 65px);
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
+        .hero-content h1 { font-size: clamp(36px, 5vw, 65px); margin-bottom: 15px; font-weight: 800; }
         .hero-content span { color: #ff2d2d; }
-        .hero-content p {
-            color: #ccc;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
+        .hero-content p { color: #ccc; font-size: 1.2rem; margin-bottom: 30px; line-height: 1.5; }
 
-        /* DIVIDER */
         .divider {
             height: 1px;
             margin: 40px 6%;
             background: linear-gradient(to right, transparent, #ff2d2d, transparent);
         }
 
-        /* BOX OFFICE SECTION */
+        /* BOX OFFICE CONTAINER */
         .box-office-container { padding: 0 6% 80px; }
         .section-header { margin-bottom: 35px; }
         .box-office-container h2 {
@@ -144,7 +124,7 @@ layout: null
             font-size: 24px;
         }
 
-        /* TABLE STYLING */
+        /* TABLE */
         .table-wrapper {
             width: 100%;
             overflow-x: auto;
@@ -153,7 +133,6 @@ layout: null
             border: 1px solid rgba(255,255,255,0.05);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -161,12 +140,7 @@ layout: null
             font-size: 15px;
             min-width: 750px;
         }
-
-        th, td {
-            padding: 16px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
+        th, td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         th {
             background: rgba(255, 45, 45, 0.1);
             color: #ff2d2d;
@@ -175,7 +149,6 @@ layout: null
             font-size: 13px;
             letter-spacing: 0.5px;
         }
-
         tr:last-child td { border-bottom: none; }
         tr:hover td { background: rgba(255, 255, 255, 0.02); transition: 0.2s; }
 
@@ -205,19 +178,8 @@ layout: null
         .tba { background: rgba(255,255,255,0.1); color: #aaa; }
 
         /* FOOTER */
-        footer {
-            padding: 60px 6%;
-            background: #050505;
-            border-top: 1px solid #111;
-            text-align: center;
-        }
-        .footer-links {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        footer { padding: 60px 6%; background: #050505; border-top: 1px solid #111; text-align: center; }
+        .footer-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .footer-links a { color: #666; text-decoration: none; font-size: 14px; }
         .footer-links a:hover { color: #fff; }
         .copyright { color: #444; font-size: 13px; }
@@ -293,27 +255,15 @@ layout: null
                         <td>{{ movie.release | date: "%d %b, %Y" }}</td>
                         
                         <td>
-                            {% if movie.budget %}{{ movie.budget }}
-                            {% elsif movie.title == "Dhamaal 4" %}₹90 करोड़
-                            {% elsif movie.title == "Moana (Live Action)" %}₹1600 करोड़
-                            {% elsif movie.title == "Spider-Man: Brand New Day" %}₹1800 करोड़
-                            {% else %}--{% endif %}
+                            {% if movie.budget %}{{ movie.budget }}{% else %}--{% endif %}
                         </td>
                         
                         <td>
-                            {% if movie.india_collection %}{{ movie.india_collection }}
-                            {% elsif movie.title == "Dhamaal 4" %}₹115 करोड़
-                            {% elsif movie.title == "Moana (Live Action)" %}₹85 करोड़
-                            {% elsif movie.title == "Spider-Man: Brand New Day" %}₹140 करोड़
-                            {% else %}--{% endif %}
+                            {% if movie.india_collection %}{{ movie.india_collection }}{% else %}--{% endif %}
                         </td>
                         
                         <td>
-                            {% if movie.worldwide_gross %}{{ movie.worldwide_gross }}
-                            {% elsif movie.title == "Dhamaal 4" %}₹160 करोड़
-                            {% elsif movie.title == "Moana (Live Action)" %}₹450 करोड़
-                            {% elsif movie.title == "Spider-Man: Brand New Day" %}₹950 करोड़
-                            {% else %}--{% endif %}
+                            {% if movie.worldwide_gross %}{{ movie.worldwide_gross }}{% else %}--{% endif %}
                         </td>
                         
                         <td>
@@ -322,10 +272,6 @@ layout: null
                                 <span class="verdict {% if v contains 'blockbuster' %}blockbuster{% elsif v contains 'hit' %}hit{% elsif v contains 'flop' %}flop{% elsif v contains 'average' %}average{% else %}tba{% endif %}">
                                     {{ movie.verdict }}
                                 </span>
-                            {% elsif movie.title == "Dhamaal 4" %}
-                                <span class="verdict hit">Hit</span>
-                            {% elsif movie.title == "Moana (Live Action)" or movie.title == "Spider-Man: Brand New Day" %}
-                                <span class="verdict average">Average</span>
                             {% else %}
                                 <span class="verdict tba">TBA (Upcoming)</span>
                             {% endif %}
