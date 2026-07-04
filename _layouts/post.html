@@ -128,18 +128,9 @@ h1 {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    h1 { font-size: 22px; }
 }
 </style>
 </head>
@@ -147,12 +138,10 @@ h1 {
 <body>
 
 <nav class="navbar">
-
     <div class="logo">
         Cinee<span>Manch</span>
         <small>सिनेमंच</small>
     </div>
-
     <div class="nav-links">
         <a href="{{ site.baseurl }}/index.html">Home</a>
         <a href="{{ site.baseurl }}/reviews.html">Reviews</a>
@@ -160,9 +149,7 @@ h1 {
         <a href="#">Box Office</a>
         <a href="#">About</a>
     </div>
-
     <div class="menu-toggle">☰</div>
-
 </nav>
 
 <div class="post-container">
@@ -170,12 +157,7 @@ h1 {
     <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
 
     <div class="video-wrapper">
-        {% if page.video contains '?' %}
-            {% assign autoplay_url = page.video | append: '&autoplay=1&mute=1' %}
-        {% else %}
-            {% assign autoplay_url = page.video | append: '?autoplay=1&mute=1' %}
-        {% endif %}
-        <iframe src="{{ autoplay_url }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="reviewVideo" data-raw-src="{{ page.video }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
     <h1>{{ page.title }}</h1>
@@ -189,6 +171,32 @@ h1 {
     </div>
 
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const iframe = document.getElementById("reviewVideo");
+        let rawUrl = iframe.getAttribute("data-raw-src").trim();
+        let videoId = "";
+
+        // 1. Extract Video ID from any type of YouTube link
+        if (rawUrl.includes("youtube.com/embed/")) {
+            videoId = rawUrl.split("youtube.com/embed/")[1].split("?")[0];
+        } else if (rawUrl.includes("youtube.com/watch")) {
+            const urlParams = new URLSearchParams(rawUrl.split('?')[1]);
+            videoId = urlParams.get('v');
+        } else if (rawUrl.includes("youtu.be/")) {
+            videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
+        }
+
+        // 2. Build the perfect embed URL with global autoplay and mute policies override
+        if (videoId) {
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&showinfo=0`;
+        } else {
+            // Fallback: If URL format is unrecognized, pass it with parameters anyway
+            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1&mute=1' : rawUrl + '?autoplay=1&mute=1';
+        }
+    });
+</script>
 
 </body>
 </html>
