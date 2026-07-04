@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Alpha Movie Review: Does Alia Bhatt & Sharvari's Spy Thriller Live Up to the Hype?"
+title: "Alpha Movie Review: Paisa Wasool Ya Time Waste? Honest Review Se Pehle Ticket Mat Lena!"
 video: "https://www.youtube.com/embed/VJGh8z6LnbA"
 description: "Bhai starting me hi bol deta hoon — expectations high leke mat jaana 😄<br><br>
 Trailer dekh ke laga tha YRF Spy Universe ki next badi blockbuster aa rahi hai... 👀<br>
