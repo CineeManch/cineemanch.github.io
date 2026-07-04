@@ -135,6 +135,38 @@ h1 {
     }
 }
 </style>
+
+<!-- ================= GOOGLE REVIEW SCHEMA ================= -->
+{% if page.rating %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Movie",
+    "name": "{{ page.title | split: ':' | first | escape }}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "worstRating": "1",
+    "bestRating": "10"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "CineeManch Reviewer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CineeManch",
+    "url": "https://www.cineemanch.com"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "reviewBody": "{{ page.description | strip_html | replace: '\n', ' ' | truncate: 150 | escape }}"
+}
+</script>
+{% endif %}
+
 </head>
 
 <body>
