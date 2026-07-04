@@ -14,125 +14,125 @@ layout: null
 
 /* ================= GLOBAL ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: #000;
-    color: #fff;
-    font-family: Inter, sans-serif;
-    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
 }
 
 /* ================= NAVBAR ================= */
 .navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 14px 5%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 14px 5%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 700;
 }
 .logo span { color: #ff2d2d; }
 .logo small { display: block; font-size: 11px; color: #aaa; }
 
 .nav-links {
-    display: flex;
-    gap: 22px;
-    justify-content: center;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
 }
 
 .nav-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    justify-self: end;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    justify-self: end;
 }
 
 /* ================= CONTAINER ================= */
 .post-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
 .back-btn {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.7;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
 }
 
 .back-btn:hover {
-    opacity: 1;
+    opacity: 1;
 }
 
 /* ================= VIDEO ================= */
 .video-wrapper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #111;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .video-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* ================= CONTENT ================= */
 h1 {
-    margin-top: 20px;
-    font-size: 28px;
-    color: #ff2d2d;
+    margin-top: 20px;
+    font-size: 28px;
+    color: #ff2d2d;
 }
 
 .meta {
-    color: #aaa;
-    margin-top: 6px;
-    font-size: 14px;
+    color: #aaa;
+    margin-top: 6px;
+    font-size: 14px;
 }
 
 .description {
-    margin-top: 20px;
-    color: #bbb;
-    line-height: 1.8;
-    font-size: 16px;
+    margin-top: 20px;
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 16px;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    h1 {
-        font-size: 22px;
-    }
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    h1 {
+        font-size: 22px;
+    }
 }
 </style>
 
@@ -140,29 +140,29 @@ h1 {
 {% if page.rating %}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Movie",
-    "name": "{{ page.title | split: ':' | first | escape }}"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "{{ page.rating }}",
-    "worstRating": "1",
-    "bestRating": "10"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "CineeManch Reviewer"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "CineeManch",
-    "url": "https://www.cineemanch.com"
-  },
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "reviewBody": "{{ page.description | strip_html | replace: '\n', ' ' | truncate: 150 | escape }}"
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Movie",
+    "name": "{{ page.title | split: ':' | first | escape }}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "worstRating": "1",
+    "bestRating": "10"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "CineeManch Reviewer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CineeManch",
+    "url": "https://www.cineemanch.com"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "reviewBody": "{{ page.description | strip_html | replace: '\n', ' ' | truncate: 150 | escape }}"
 }
 </script>
 {% endif %}
@@ -172,69 +172,69 @@ h1 {
 <body>
 
 <nav class="navbar">
-    <div class="logo">
-        Cinee<span>Manch</span>
-        <small>सिनेमंच</small>
-    </div>
+    <div class="logo">
+        Cinee<span>Manch</span>
+        <small>सिनेमंच</small>
+    </div>
 
-    <div class="nav-links">
-        <a href="{{ site.baseurl }}/index.html">Home</a>
-        <a href="{{ site.baseurl }}/reviews.html">Reviews</a>
-        <a href="#">Recommended</a>
-        <a href="#">Box Office</a>
-        <a href="#">About</a>
-    </div>
+    <div class="nav-links">
+        <a href="{{ site.baseurl }}/index.html">Home</a>
+        <a href="{{ site.baseurl }}/reviews.html">Reviews</a>
+        <a href="#">Recommended</a>
+        <a href="#">Box Office</a>
+        <a href="#">About</a>
+    </div>
 
-    <div class="menu-toggle">☰</div>
+    <div class="menu-toggle">☰</div>
 </nav>
 
 <div class="post-container">
 
-    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
+    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
 
-    <div class="video-wrapper">
-        <iframe id="reviewVideo" data-raw-src="{{ page.video }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    <div class="video-wrapper">
+        <iframe id="reviewVideo" data-raw-src="{{ page.video }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
 
-    {% if page.rating %}
-    <div class="meta">⭐ {{ page.rating }}/10</div>
-    {% endif %}
+    {% if page.rating %}
+    <div class="meta">⭐ {{ page.rating }}/10</div>
+    {% endif %}
 
-    <div class="description">
-        {{ page.description }}
-    </div>
+    <div class="description">
+        {{ page.description }}
+    </div>
 
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const iframe = document.getElementById("reviewVideo");
-        if (!iframe) return;
-        
-        let rawUrl = iframe.getAttribute("data-raw-src") ? iframe.getAttribute("data-raw-src").trim() : "";
-        let videoId = "";
+    document.addEventListener("DOMContentLoaded", function() {
+        const iframe = document.getElementById("reviewVideo");
+        if (!iframe) return;
+        
+        let rawUrl = iframe.getAttribute("data-raw-src") ? iframe.getAttribute("data-raw-src").trim() : "";
+        let videoId = "";
 
-        if (!rawUrl) return;
+        if (!rawUrl) return;
 
-        // Extract Video ID
-        if (rawUrl.includes("youtube.com/embed/")) {
-            videoId = rawUrl.split("youtube.com/embed/")[1].split("?")[0];
-        } else if (rawUrl.includes("youtube.com/watch")) {
-            const urlParams = new URLSearchParams(rawUrl.split('?')[1]);
-            videoId = urlParams.get('v');
-        } else if (rawUrl.includes("youtu.be/")) {
-            videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
-        }
+        // Extract Video ID
+        if (rawUrl.includes("youtube.com/embed/")) {
+            videoId = rawUrl.split("youtube.com/embed/")[1].split("?")[0];
+        } else if (rawUrl.includes("youtube.com/watch")) {
+            const urlParams = new URLSearchParams(rawUrl.split('?')[1]);
+            videoId = urlParams.get('v');
+        } else if (rawUrl.includes("youtu.be/")) {
+            videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
+        }
 
-        // Build URL (Autoplay is requested with audio active)
-        if (videoId) {
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
-        } else {
-            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1' : rawUrl + '?autoplay=1';
-        }
-    });
+        // Build URL (Autoplay is requested with audio active)
+        if (videoId) {
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
+        } else {
+            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1' : rawUrl + '?autoplay=1';
+        }
+    });
 </script>
 
 </body>
