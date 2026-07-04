@@ -146,7 +146,6 @@ h1 {
 
 <body>
 
-<!-- NAVBAR (SAME AS INDEX) -->
 <nav class="navbar">
 
     <div class="logo">
@@ -166,25 +165,25 @@ h1 {
 
 </nav>
 
-<!-- POST CONTENT -->
 <div class="post-container">
 
     <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
 
-    <!-- VIDEO -->
     <div class="video-wrapper">
-        <iframe src="{{ page.video }}" allowfullscreen></iframe>
+        {% if page.video contains '?' %}
+            {% assign autoplay_url = page.video | append: '&autoplay=1&mute=1' %}
+        {% else %}
+            {% assign autoplay_url = page.video | append: '?autoplay=1&mute=1' %}
+        {% endif %}
+        <iframe src="{{ autoplay_url }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
-    <!-- TITLE -->
     <h1>{{ page.title }}</h1>
 
-    <!-- RATING -->
     {% if page.rating %}
     <div class="meta">⭐ {{ page.rating }}/10</div>
     {% endif %}
 
-    <!-- DESCRIPTION -->
     <div class="description">
         {{ page.description }}
     </div>
