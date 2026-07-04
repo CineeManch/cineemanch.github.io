@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Alpha Movie Review: Does Alia Bhatt & Sharvari's Spy Thriller Live Up to the Hype?"
-video: "https://www.youtube.com/watch?v=hpbjbdZvnXo"
+video: "https://www.youtube.com/embed/VJGh8z6LnbA"
 rating: 7.0
 description: "Is Alia Bhatt's new spy thriller worth the hype? Read our honest, spoiler-free Alpha movie review for our full rating and breakdown!"
 ---
