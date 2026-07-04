@@ -196,11 +196,11 @@ h1 {
             videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
         }
 
-        // Build URL
+        // Build URL (Autoplay is requested with audio active)
         if (videoId) {
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&showinfo=0`;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
         } else {
-            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1&mute=1' : rawUrl + '?autoplay=1&mute=1';
+            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1' : rawUrl + '?autoplay=1';
         }
     });
 </script>
