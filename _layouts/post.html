@@ -7,7 +7,15 @@ layout: null
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>{{ page.title }}</title>
+
+<meta
+    name="description"
+    content="{{ page.description | strip_html | strip_newlines | truncate: 160 | escape }}"
+>
+
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -45,8 +53,16 @@ body {
     font-size: 22px;
     font-weight: 700;
 }
-.logo span { color: #ff2d2d; }
-.logo small { display: block; font-size: 11px; color: #aaa; }
+
+.logo span {
+    color: #ff2d2d;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    color: #aaa;
+}
 
 .nav-links {
     display: flex;
@@ -127,49 +143,70 @@ h1 {
     .nav-links {
         display: none;
     }
+
     .menu-toggle {
         display: block;
     }
+
     h1 {
         font-size: 22px;
     }
 }
 </style>
 
-<!-- ================= GOOGLE REVIEW SCHEMA ================= -->
+<!-- ================= GOOGLE MOVIE REVIEW SCHEMA ================= -->
 {% if page.rating %}
+
+{% assign movie_name = page.movie_name | default: page.title %}
+{% assign video_id = page.video | split: '/embed/' | last | split: '?' | first %}
+
+{% if page.image %}
+    {% assign movie_image = page.image | absolute_url %}
+{% elsif page.video %}
+    {% capture movie_image %}https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg{% endcapture %}
+{% else %}
+    {% assign movie_image = 'https://www.cineemanch.com/favicon.png' %}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Movie",
-    "name": "{{ page.title | split: ':' | first | remove: 'Movie Review' | strip | escape }}",
-    "image": "https://www.cineemanch.com/assets/images/default-movie.jpg"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "{{ page.rating }}",
-    "worstRating": "1",
-    "bestRating": "10"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "CineeManch Reviewer"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "CineeManch",
-    "url": "https://www.cineemanch.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.cineemanch.com/assets/images/logo.png"
+  "@type": "Movie",
+  "@id": {{ page.url | absolute_url | append: "#movie" | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "name": {{ movie_name | jsonify }},
+  "image": {{ movie_image | strip | jsonify }},
+  "review": {
+    "@type": "Review",
+    "@id": {{ page.url | absolute_url | append: "#review" | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "headline": {{ page.title | jsonify }},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "author": {
+      "@type": "Organization",
+      "name": "CineeManch",
+      "url": "https://www.cineemanch.com/"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": {{ page.rating | jsonify }},
+      "worstRating": 1,
+      "bestRating": 10
+    },
+    "reviewBody": {{ page.description | strip_html | strip_newlines | truncate: 500 | jsonify }},
+    "publisher": {
+      "@type": "Organization",
+      "name": "CineeManch",
+      "url": "https://www.cineemanch.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cineemanch.com/favicon.png"
+      }
     }
-  },
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "reviewBody": "{{ page.description | strip_html | strip_newlines | truncate: 150 | escape }}"
+  }
 }
 </script>
+
 {% endif %}
 
 </head>
@@ -177,6 +214,7 @@ h1 {
 <body>
 
 <nav class="navbar">
+
     <div class="logo">
         Cinee<span>Manch</span>
         <small>सिनेमंच</small>
@@ -191,20 +229,31 @@ h1 {
     </div>
 
     <div class="menu-toggle">☰</div>
+
 </nav>
 
 <div class="post-container">
 
-    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">← Back to Reviews</a>
+    <a href="{{ site.baseurl }}/reviews.html" class="back-btn">
+        ← Back to Reviews
+    </a>
 
     <div class="video-wrapper">
-        <iframe id="reviewVideo" data-raw-src="{{ page.video }}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe
+            id="reviewVideo"
+            data-raw-src="{{ page.video }}"
+            title="{{ page.title | escape }}"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
     </div>
 
     <h1>{{ page.title }}</h1>
 
     {% if page.rating %}
-    <div class="meta">⭐ {{ page.rating }}/10</div>
+    <div class="meta">
+        ⭐ {{ page.rating }}/10
+    </div>
     {% endif %}
 
     <div class="description">
@@ -214,32 +263,60 @@ h1 {
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const iframe = document.getElementById("reviewVideo");
-        if (!iframe) return;
-        
-        let rawUrl = iframe.getAttribute("data-raw-src") ? iframe.getAttribute("data-raw-src").trim() : "";
-        let videoId = "";
+document.addEventListener("DOMContentLoaded", function() {
 
-        if (!rawUrl) return;
+    const iframe = document.getElementById("reviewVideo");
 
-        // Extract Video ID
-        if (rawUrl.includes("youtube.com/embed/")) {
-            videoId = rawUrl.split("youtube.com/embed/")[1].split("?")[0];
-        } else if (rawUrl.includes("youtube.com/watch")) {
-            const urlParams = new URLSearchParams(rawUrl.split('?')[1]);
-            videoId = urlParams.get('v');
-        } else if (rawUrl.includes("youtu.be/")) {
-            videoId = rawUrl.split("youtu.be/")[1].split("?")[0];
-        }
+    if (!iframe) {
+        return;
+    }
 
-        // Build URL (Autoplay is requested with audio active)
-        if (videoId) {
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
-        } else {
-            iframe.src = rawUrl.includes('?') ? rawUrl + '&autoplay=1' : rawUrl + '?autoplay=1';
-        }
-    });
+    let rawUrl = iframe.getAttribute("data-raw-src")
+        ? iframe.getAttribute("data-raw-src").trim()
+        : "";
+
+    let videoId = "";
+
+    if (!rawUrl) {
+        return;
+    }
+
+    if (rawUrl.includes("youtube.com/embed/")) {
+
+        videoId = rawUrl
+            .split("youtube.com/embed/")[1]
+            .split("?")[0];
+
+    } else if (rawUrl.includes("youtube.com/watch")) {
+
+        const queryString = rawUrl.includes("?")
+            ? rawUrl.split("?")[1]
+            : "";
+
+        const urlParams = new URLSearchParams(queryString);
+
+        videoId = urlParams.get("v");
+
+    } else if (rawUrl.includes("youtu.be/")) {
+
+        videoId = rawUrl
+            .split("youtu.be/")[1]
+            .split("?")[0];
+    }
+
+    if (videoId) {
+
+        iframe.src =
+            `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+    } else {
+
+        iframe.src = rawUrl.includes("?")
+            ? rawUrl + "&autoplay=1"
+            : rawUrl + "?autoplay=1";
+    }
+
+});
 </script>
 
 </body>
