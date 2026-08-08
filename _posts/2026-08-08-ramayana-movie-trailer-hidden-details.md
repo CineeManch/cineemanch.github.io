@@ -1,4 +1,4 @@
---
+---
 layout: posttitle: "Ramayana Trailer Mein Ye Detail Notice Ki? Ranbir Kapoor & Yash Explained"description: "Ramayana trailer ke hidden details ka Hindi analysis. Ranbir Kapoor ke Lord Ram look, Yash ke Ravan avatar aur Nitesh Tiwari ki Ramayana ke visual clues ko decode karein."slug: "ramayana-trailer-hidden-details-ranbir-kapoor-yash-explained"date: 2026-08-08category: "Bollywood News"tags:
 
 Ramayana
@@ -70,4 +70,4 @@ Ab asli sawal ye hai — kya aapne trailer dekhte waqt ye detail notice ki thi?
 Aapko Ranbir Kapoor ka Ram look aur Yash ka Ravan avatar kaisa laga? Aur kya aapko trailer me koi aur hidden detail nazar aayi?
 
 Niche comments section me apni rai zaroor share karein!
---
+---
