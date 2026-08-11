@@ -1,3 +1,5 @@
+# Last updated: 2026-08-11
+
 # =========================
 # HOLLYWOOD
 # =========================
@@ -7,8 +9,9 @@
   industry: Hollywood
   language: English
   genre: Fantasy Adventure
-  status: Upcoming
+  status: Released
   poster: /assets/posters/moana-live-action.jpg
+  collection: "$281.22M worldwide"
   trailer:
   review:
   ott:
@@ -18,19 +21,21 @@
   industry: Hollywood
   language: English
   genre: Superhero Action
-  status: Upcoming
+  status: Released
   poster: /assets/posters/spiderman-brand-new-day.jpg
+  collection: "$1.664B worldwide"
   trailer:
   review:
   ott:
 
-- title: "Insidious: Into the Further"
+- title: "Insidious: Out of the Further"
   release: 2026-08-21
   industry: Hollywood
   language: English
   genre: Horror
   status: Upcoming
-  poster: /assets/posters/insidious-into-the-further.jpg
+  poster: /assets/posters/insidious-out-of-the-further.jpg
+  collection:
   trailer:
   review:
   ott:
@@ -42,6 +47,7 @@
   genre: Sci-Fi Dystopian
   status: Upcoming
   poster: /assets/posters/hunger-games-sunrise.jpg
+  collection:
   trailer:
   review:
   ott:
@@ -53,44 +59,49 @@
   genre: Sci-Fi Epic
   status: Upcoming
   poster: /assets/posters/dune-part-three.jpg
+  collection:
   trailer:
   review:
   ott:
+
 
 # =========================
 # BOLLYWOOD
 # =========================
 
 - title: "Dhamaal 4"
-  release: 2026-07-03
+  release: 2026-07-10
   industry: Bollywood
   language: Hindi
   genre: Comedy
-  status: Upcoming
+  status: Released
   poster: /assets/posters/dhamaal4.jpg
+  collection: "₹228.36 Cr worldwide"
   trailer:
   review:
   ott:
 
-- title: "Love and War"
-  release: 2026-08-14
+- title: "Love & War"
+  release: 2027-01-21
   industry: Bollywood
   language: Hindi
   genre: Romantic Drama
   status: Upcoming
   poster: /assets/posters/love-and-war.jpg
+  collection:
   trailer:
   review:
   ott:
 
-- title: "Mirzapur: The Film"
+- title: "Mirzapur: The Movie"
   release: 2026-09-04
   industry: Bollywood
   language: Hindi
-  genre: Crime Drama
+  genre: Crime Action Thriller
   status: Upcoming
   poster: /assets/posters/mirzapur-the-film.jpg
-  trailer:
+  collection:
+  trailer: "https://youtu.be/5vMWZhHPlaw"
   review:
   ott:
 
@@ -101,6 +112,7 @@
   genre: Mystery Thriller
   status: Upcoming
   poster: /assets/posters/drishyam3.jpg
+  collection:
   trailer:
   review:
   ott:
@@ -112,57 +124,64 @@
   genre: Action Thriller
   status: Upcoming
   poster: /assets/posters/king.jpg
+  collection:
   trailer:
   review:
   ott:
+
 
 # =========================
 # SOUTH INDIAN CINEMA
 # =========================
 
 - title: "Srinivasa Mangapuram"
-  release: 2026-07-10
+  release: 2026-07-30
   industry: Tollywood
   language: Telugu
-  genre: Drama
-  status: Upcoming
+  genre: Romantic Action Drama
+  status: Released
   poster: /assets/posters/srinivasa-mangapuram.jpg
+  collection: "₹6.45 Cr worldwide"
   trailer:
   review:
   ott:
 
 - title: "Nagabandham: The Secret Treasure"
-  release: 2026-08-15
+  release: 2026-07-03
   industry: Tollywood
   language: Telugu
-  genre: Fantasy Adventure
-  status: Upcoming
+  genre: Fantasy Action Adventure
+  status: Released
   poster: /assets/posters/nagabandham.jpg
+  collection: "₹27.35 Cr worldwide"
   trailer:
   review:
   ott:
 
 - title: "Toxic: A Fairy Tale for Grown-ups"
-  release: 2026-08-25
+  release: 2026-08-26
   industry: Sandalwood
   language: Kannada
-  genre: Action Thriller
+  genre: Period Gangster Action Thriller
   status: Upcoming
   poster: /assets/posters/toxic.jpg
+  collection:
+  trailer:
+  review: "/toxic-trailer-review-hindi-yash-double-role-explained/"
+  ott:
+
+- title: "Sardar 2"
+  release: 2026-09-10
+  industry: Kollywood
+  language: Tamil
+  genre: Spy Action Thriller
+  status: Upcoming
+  poster: /assets/posters/sardar2.jpg
+  collection:
   trailer:
   review:
   ott:
 
-- title: "Sardar 2"
-  release: 2026-09-09
-  industry: Kollywood
-  language: Tamil
-  genre: Spy Thriller
-  status: Upcoming
-  poster: /assets/posters/sardar2.jpg
-  trailer:
-  review:
-  ott:
 
 # =========================
 # MALAYALAM
@@ -172,31 +191,34 @@
   release: 2026-07-09
   industry: Mollywood
   language: Malayalam
-  genre: Drama Thriller
-  status: Upcoming
+  genre: Heist Action Thriller
+  status: Released
   poster: /assets/posters/i-nobody.jpg
+  collection: "₹15.37 Cr worldwide"
   trailer:
   review:
   ott:
 
 - title: "Varavu"
-  release: 2026-07-15
+  release: 2026-07-16
   industry: Mollywood
   language: Malayalam
-  genre: Drama
-  status: Upcoming
+  genre: Action Mystery Thriller
+  status: Released
   poster: /assets/posters/varavu.jpg
+  collection: "₹15.00 Cr worldwide (reported estimate)"
   trailer:
   review:
   ott:
 
 - title: "Unmadham"
-  release: 2026-08-06
+  release: 2026-07-31
   industry: Mollywood
   language: Malayalam
-  genre: Psychological Thriller
-  status: Upcoming
+  genre: Psychological Crime Thriller
+  status: Released
   poster: /assets/posters/unmadham.jpg
+  collection: "₹3.72 Cr India net after 10 days"
   trailer:
   review:
   ott:
