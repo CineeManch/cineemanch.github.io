@@ -20,7 +20,7 @@ Aapko kya laga?<br>
 Yash ki chemistry zyada achhi lagi Tara Sutaria ke saath ya Kiara Advani ke saath?<br>
 Comments me apni opinion zaroor batao. 👇"
 date: 2026-07-23
-rating: 8.8
+rating: 
 ---
 
 # Madhosh Song Review Hindi | Toxic का Game पलट दिया? 🔥 | Yash–Tara Sutaria Chemistry
