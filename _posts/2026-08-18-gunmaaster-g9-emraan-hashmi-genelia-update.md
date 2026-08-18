@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Aashiq Banaya Aapne 2 Loading? 🔥 | Emraan Hashmi & Genelia in Gunmaaster G9"
 video: "https://www.youtube.com/embed/8aAxnWush7I"
@@ -17,3 +18,4 @@ Gunmaaster G9 technically Aashiq Banaya Aapne 2 nahi hai, lekin Emraan Hashmi, A
 
 Kya Gunmaaster G9 2026 ki surprise romantic-action hit ban sakti hai?
 Aur Emraan Hashmi aur Genelia Deshmukh ki pairing audience ko impress karegi?
+---
