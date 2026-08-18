@@ -1,4 +1,6 @@
-# Last updated: 2026-08-11
+# Last updated: 2026-08-18
+# Box-office figures are reported/estimated values and may change.
+# Keep box_office_url blank until an individual CineeManch box-office page exists.
 
 
 # =========================
@@ -11,10 +13,11 @@
   language: English
   genre: Fantasy Adventure
   poster: /assets/posters/moana-live-action.jpg
+  box_office_url:
 
-  budget:
+  budget: "$250M"
   india_collection:
-  worldwide_gross: "$281.22M"
+  worldwide_gross: "$293.56M"
   verdict:
 
   trailer:
@@ -28,11 +31,12 @@
   language: English
   genre: Superhero Action
   poster: /assets/posters/spiderman-brand-new-day.jpg
+  box_office_url:
 
   budget:
-  india_collection:
-  worldwide_gross: "$1.664B"
-  verdict:
+  india_collection: "₹467.05 Cr (reported till Day 18)"
+  worldwide_gross: "$2.022B+"
+  verdict: "Blockbuster"
 
   trailer:
   review:
@@ -45,6 +49,7 @@
   language: English
   genre: Horror
   poster: /assets/posters/insidious-out-of-the-further.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -62,6 +67,7 @@
   language: English
   genre: Sci-Fi Dystopian
   poster: /assets/posters/hunger-games-sunrise.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -79,6 +85,7 @@
   language: English
   genre: Sci-Fi Epic
   poster: /assets/posters/dune-part-three.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -95,16 +102,35 @@
 # BOLLYWOOD
 # =========================
 
-- title: "Dhamaal 4"
-  release: 2026-07-10
+- title: "Awarapan 2"
+  release: 2026-08-14
   industry: Bollywood
   language: Hindi
-  genre: Comedy
-  poster: /assets/posters/dhamaal4.jpg
+  genre: Romantic Action Thriller
+  poster:
+  box_office_url:
 
-  budget:
-  india_collection:
-  worldwide_gross: "₹228.36 Cr"
+  budget: "₹45 Cr (reported)"
+  india_collection: "₹91.00 Cr"
+  worldwide_gross: "₹130.82 Cr"
+  verdict: "Hit"
+
+  trailer:
+  review:
+  ott:
+
+
+- title: "Batwara 1947"
+  release: 2026-08-14
+  industry: Bollywood
+  language: Hindi
+  genre: Historical Drama
+  poster:
+  box_office_url:
+
+  budget: "₹120 Cr (reported)"
+  india_collection: "₹28.50 Cr"
+  worldwide_gross: "₹40.20 Cr"
   verdict:
 
   trailer:
@@ -112,17 +138,18 @@
   ott:
 
 
-- title: "Love & War"
-  release: 2027-01-21
+- title: "Dhamaal 4"
+  release: 2026-07-10
   industry: Bollywood
   language: Hindi
-  genre: Romantic Drama
-  poster: /assets/posters/love-and-war.jpg
+  genre: Comedy
+  poster: /assets/posters/dhamaal4.jpg
+  box_office_url:
 
-  budget:
-  india_collection:
-  worldwide_gross:
-  verdict:
+  budget: "₹150 Cr (reported)"
+  india_collection: "₹177.74 Cr"
+  worldwide_gross: "₹236.23 Cr"
+  verdict: "Average"
 
   trailer:
   review:
@@ -135,6 +162,7 @@
   language: Hindi
   genre: Crime Action Thriller
   poster: /assets/posters/mirzapur-the-film.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -152,6 +180,7 @@
   language: Hindi
   genre: Mystery Thriller
   poster: /assets/posters/drishyam3.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -169,6 +198,25 @@
   language: Hindi
   genre: Action Thriller
   poster: /assets/posters/king.jpg
+  box_office_url:
+
+  budget:
+  india_collection:
+  worldwide_gross:
+  verdict:
+
+  trailer:
+  review:
+  ott:
+
+
+- title: "Love & War"
+  release: 2027-01-21
+  industry: Bollywood
+  language: Hindi
+  genre: Romantic Drama
+  poster: /assets/posters/love-and-war.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -185,34 +233,36 @@
 # SOUTH INDIAN CINEMA
 # =========================
 
-- title: "Srinivasa Mangapuram"
-  release: 2026-07-30
-  industry: Tollywood
-  language: Telugu
-  genre: Romantic Action Drama
-  poster: /assets/posters/srinivasa-mangapuram.jpg
-
-  budget:
-  india_collection:
-  worldwide_gross: "₹6.45 Cr"
-  verdict:
-
-  trailer:
-  review:
-  ott:
-
-
 - title: "Nagabandham: The Secret Treasure"
   release: 2026-07-03
   industry: Tollywood
   language: Telugu
   genre: Fantasy Action Adventure
   poster: /assets/posters/nagabandham.jpg
+  box_office_url:
 
   budget:
-  india_collection:
+  india_collection: "₹20.23 Cr (reported)"
   worldwide_gross: "₹27.35 Cr"
-  verdict:
+  verdict: "Flop"
+
+  trailer:
+  review:
+  ott:
+
+
+- title: "Srinivasa Mangapuram"
+  release: 2026-07-30
+  industry: Tollywood
+  language: Telugu
+  genre: Romantic Action Drama
+  poster: /assets/posters/srinivasa-mangapuram.jpg
+  box_office_url:
+
+  budget:
+  india_collection: "₹5.53 Cr (reported)"
+  worldwide_gross: "₹6.54 Cr (reported)"
+  verdict: "Flop"
 
   trailer:
   review:
@@ -225,6 +275,7 @@
   language: Kannada
   genre: Period Gangster Action Thriller
   poster: /assets/posters/toxic.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -242,6 +293,7 @@
   language: Tamil
   genre: Spy Action Thriller
   poster: /assets/posters/sardar2.jpg
+  box_office_url:
 
   budget:
   india_collection:
@@ -264,11 +316,12 @@
   language: Malayalam
   genre: Heist Action Thriller
   poster: /assets/posters/i-nobody.jpg
+  box_office_url:
 
   budget:
-  india_collection:
+  india_collection: "₹8.71 Cr"
   worldwide_gross: "₹15.37 Cr"
-  verdict:
+  verdict: "Flop / Disaster"
 
   trailer:
   review:
@@ -281,10 +334,11 @@
   language: Malayalam
   genre: Action Mystery Thriller
   poster: /assets/posters/varavu.jpg
+  box_office_url:
 
   budget:
-  india_collection:
-  worldwide_gross: "₹15.00 Cr (reported estimate)"
+  india_collection: "₹4.39 Cr (reported till 21 Jul)"
+  worldwide_gross:
   verdict:
 
   trailer:
@@ -298,11 +352,12 @@
   language: Malayalam
   genre: Psychological Crime Thriller
   poster: /assets/posters/unmadham.jpg
+  box_office_url:
 
   budget:
-  india_collection: "₹3.72 Cr"
-  worldwide_gross:
-  verdict:
+  india_collection: "₹3.83 Cr"
+  worldwide_gross: "₹4.52 Cr"
+  verdict: "Flop"
 
   trailer:
   review:
