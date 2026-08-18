@@ -16,7 +16,7 @@ Trailer Rating: 9.5 / 10 ⭐<br><br>
 Aapko Mirzapur The Movie ka trailer kaisa laga? Kya Munna Bhaiya aur Kaleen Bhaiya theater mein bhi wahi bawaal macha paayenge?<br>
 Comments me apni opinion zaroor batao. 👇"
 date: 2026-08-11
-rating: 9.5
+rating: 
 ---
 
 # Mirzapur The Movie Trailer Review Hindi | Munna Bhaiya Ka Comeback Kaisa Hai? 🔥
