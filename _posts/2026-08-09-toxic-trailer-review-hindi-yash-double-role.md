@@ -5,7 +5,7 @@ description: "Toxic trailer Hindi review and breakdown. Is Rocking Star Yash pla
 slug: "toxic-trailer-review-hindi-yash-double-role-explained"
 date: 2026-08-09
 category: "Movie Reviews"
-rating: 8.5
+rating: 
 
 tags:
   - Toxic Trailer Review
