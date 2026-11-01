@@ -42,3 +42,93 @@
 .cm-home .cm-gold {
   color: var(--cm-gold);
 }
+
+/* STEP 8: PREMIUM LATEST REVIEW CARDS */
+
+main.latest {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 6% 90px;
+}
+
+.latest .latest-header h2 {
+  color: #f5f5f5;
+  border-left: 4px solid #e63946;
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+.latest .video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.latest .video-grid a.video-card,
+.latest .video-grid a.video-card:visited {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: #1c1e26;
+  border: 1px solid #30323c;
+  border-radius: 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: transform .2s, border-color .2s;
+}
+
+.latest .video-grid a.video-card:hover {
+  transform: translateY(-4px);
+  border-color: #e63946;
+}
+
+.latest .video-card .youtube-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #15161c;
+}
+
+.latest .video-card .youtube-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.latest .video-card .info {
+  padding: 18px;
+}
+
+.latest .video-card .info h3 {
+  color: #f5f5f5;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  text-decoration: none;
+}
+
+.latest .video-card .info p {
+  color: #a6a8b3;
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
+@media (max-width: 1100px) {
+  .latest .video-grid {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .latest .video-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .latest .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
