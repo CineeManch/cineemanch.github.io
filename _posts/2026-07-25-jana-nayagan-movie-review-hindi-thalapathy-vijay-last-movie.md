@@ -10,4 +10,6 @@ description: >
 
 date: 2026-07-25
 rating: 6.5
+rating_scale: 10
+
 ---

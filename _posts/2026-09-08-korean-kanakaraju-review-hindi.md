@@ -17,6 +17,9 @@ description: |
   Korean Kanakaraju Review Hindi, Korean Kanakaraju Movie Review, Varun Tej Korean Kanakaraju, Satya Comedy Scenes, Korean Kanakaraju Netflix Release, Korean Kanakaraju Climax Explained, South Horror Comedy Movie, Ritika Nayak aur Hindi Film Breakdown ke liye video dekhiye.
 date: 2026-09-08
 rating: 2.5
+rating_scale: 5
+verdict: "One-time Watch"
+
 ---
 
 Bhai... maine bhoot ko logon ke andar ghuste dekha hai, lekin **do bhooton ko SUPERHERO ki tarah ladte hue** pehli baar dekha!

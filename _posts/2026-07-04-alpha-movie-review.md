@@ -33,4 +33,7 @@ Aapko Alpha kaisi lagi?<br>
 Comments me apna review zaroor batao 👇"
 date: 2026-07-04
 rating: 6
+rating_scale: 10
+verdict: "One-time Watch"
+
 ---

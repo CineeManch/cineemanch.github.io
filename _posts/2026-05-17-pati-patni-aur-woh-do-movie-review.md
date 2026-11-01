@@ -36,4 +36,7 @@ Agar aap Ayushmann ke hardcore fan ho aur expectations low rakh ke ja rahe ho…
 बाकी… ये तो थी मेरी राय। अब आपकी बारी — कमेंट सेक्शन में ज़रूर बताइए। क्योंकि फिल्म का सच और असली फीचर… सब बताएगा जनता का मीटर!"
 date: 2026-05-17
 rating: 6.5
+rating_scale: 10
+verdict: "One-time Watch"
+
 ---

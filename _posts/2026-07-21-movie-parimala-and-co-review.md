@@ -25,6 +25,9 @@ Aapko kya lagta hai? Kya ek strong cast kisi weak screenplay ko bacha sakti hai?
 Comments me apni opinion zaroor batao. 👇"
 date: 2026-07-21
 rating: 6.5
+rating_scale: 10
+verdict: "One-time Watch"
+
 ---
 
 # Parimala and Co Review Hindi | इतनी शानदार Cast फिर भी फिल्म कमजोर क्यों?

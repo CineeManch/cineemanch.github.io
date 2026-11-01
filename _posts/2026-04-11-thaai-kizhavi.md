@@ -12,4 +12,6 @@ Aur uske teen bete wapas aate hain… pyaar ke liye nahi, balki uske chhupe hue 
 👉 Family ya greed — kaun jeetega?"
 date: 2026-04-11
 rating: 8.5
+rating_scale: 10
+
 ---

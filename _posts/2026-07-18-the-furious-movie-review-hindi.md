@@ -27,6 +27,9 @@ Kya aapko lagta hai modern action movies me CGI ke bajaye aisi raw human fightin
 Comments me apna review aur opinion zaroor batao 👇"
 date: 2026-07-18
 rating: 8.5
+rating_scale: 10
+verdict: "Worth Watching"
+
 ---
 
 # The Furious Movie Review: China Ki No.1 Action Thriller Ka Sach!

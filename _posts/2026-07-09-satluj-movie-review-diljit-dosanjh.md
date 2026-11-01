@@ -27,4 +27,7 @@ Kya aapko lagta hai Satluj jaisi sach dikhane wali movies ko India me ban karna 
 Comments me apna review aur opinion zaroor batao 👇"
 date: 2026-07-09
 rating: 8
+rating_scale: 10
+verdict: "Worth Watching"
+
 ---

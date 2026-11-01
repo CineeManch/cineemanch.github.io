@@ -7,6 +7,8 @@ slug: "the-last-house-movie-review-hindi-netflix"
 date: 2026-08-12
 category: "Movie Reviews"
 rating: 6.5
+rating_scale: 10
+verdict: "One-time Watch"
 
 tags:
   - The Last House Movie Review

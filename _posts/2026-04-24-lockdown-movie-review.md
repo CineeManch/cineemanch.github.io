@@ -13,4 +13,6 @@ description: "सब खत्म... 😢 'Lockdown' फिल्म का र�
 अपनी राय नीचे साझा करें! 👇"
 date: 2026-04-24
 rating: 7
+rating_scale: 10
+
 ---

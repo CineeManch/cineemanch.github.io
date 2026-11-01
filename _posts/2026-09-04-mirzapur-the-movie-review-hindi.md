@@ -17,6 +17,9 @@ description: |
   Mirzapur The Movie Review Hindi, Mirzapur Movie Public Reaction, Munna Bhaiya Comeback Mirzapur Movie, Pankaj Tripathi Kaleen Bhaiya, Ravi Kishan Babban Babua, Jitendra Kumar Bablu Pandit, Mirzapur Movie Runtime, Mirzapur Season 1 Timeline, Mirzapur Movie Box Office aur Hindi Film Review ke liye video dekhiye.
 date: 2026-09-04
 rating: 8
+rating_scale: 10
+verdict: "Worth Watching"
+
 ---
 
 Mirzapur ki gaddi OTT se theatre tak aa gaya hai... lekin sawaal ye hai ki **BHAUKAAL** bhi saath aaya hai ya nahi?

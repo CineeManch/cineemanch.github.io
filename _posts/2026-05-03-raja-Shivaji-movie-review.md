@@ -10,4 +10,6 @@ Riteish Deshmukh का Chhatrapati Shivaji Maharaj के रूप में �
 Salman Khan का धमाकेदार Cameo और उसका impact.Sanjay Dutt और Abhishek Bachchan की सॉलिड प्रेजेंस.VFX, Background Score और फिल्म की सबसे बड़ी कमियां.क्या यह फिल्म Chhatrapati Shivaji Maharaj के गौरव के साथ न्याय करती है?"
 date: 2026-05-03
 rating: 5
+rating_scale: 10
+
 ---

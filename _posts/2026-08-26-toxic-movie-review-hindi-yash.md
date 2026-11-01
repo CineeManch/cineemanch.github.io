@@ -18,4 +18,6 @@ description: |
   Toxic Movie Review Hindi, Yash Toxic Review, Toxic Public Review, KGF vs Toxic Yash, Toxic Box Office Collection, Toxic Advance Booking, Yash Raya Character Breakdown, Toxic Movie Runtime, Toxic A Rating, Toxic Ending Explained aur Hindi Film Review ke liye video dekhiye.
 date: 2026-08-26
 rating: 7
+rating_scale: 10
+
 ---
