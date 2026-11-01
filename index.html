@@ -871,7 +871,7 @@ layout: null
           {% if post.rating != nil and post.rating != '' %}
           <div class="cm-card-rating">
             <span class="cm-rating-value">
-              ★ {{ post.rating }} / 5
+              ★ {{ post.rating }} / {{ post.rating_scale | default: 5 }}
             </span>
             <span class="cm-rating-label">
               CINEEMANCH RATING
